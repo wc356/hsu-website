@@ -60,7 +60,9 @@ const Navbar = () => {
           .navbar .logo a {
             white-space: nowrap;
             padding: 1rem;
-            font-size: 2.1rem;
+            font-size: 2.3rem;
+            letter-spacing: 4px;
+            font-weight: 700;
           }
 
           .navitems-wrapper {
