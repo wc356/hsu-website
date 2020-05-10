@@ -10,21 +10,19 @@ export default function Layout(props) {
       <Navbar />
       <>{props.children}</>
 
-      <style jsx>
-        {`
-          .nav {
-            position: relative;
-            top: 0;
-          }
-        `}
-      </style>
       <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap");
 
         html,
         body {
-          font-family: "Roboto", sans-serif;
-          min-height: 100vh;
+          font-family: "Lora", serif;
+          height: 100%;
+          text-align: justify;
+        }
+
+        h1,
+        h3 {
+          font-family: "Montserrat", sans-serif;
         }
 
         *,

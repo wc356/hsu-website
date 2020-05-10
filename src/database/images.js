@@ -9,5 +9,6 @@ export default {
     { id: 7, name: "IMG_0007.jpg" },
     { id: 8, name: "IMG_0008.jpg" },
     { id: 9, name: "IMG_0009.jpg" },
+    { id: 10, name: "IMG_0010.jpg" },
   ],
 };
