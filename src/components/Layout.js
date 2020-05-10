@@ -17,6 +17,9 @@ export default function Layout(props) {
         body {
           font-family: "Lora", serif;
           height: 100%;
+        }
+
+        p {
           text-align: justify;
         }
 

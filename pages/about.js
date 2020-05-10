@@ -53,7 +53,7 @@ export default function about() {
         {`
           .container {
             display: flex;
-            height: 100%;
+            height: 92vh;
           }
 
           .text {
@@ -76,7 +76,7 @@ export default function about() {
             width: 50vw;
             background-image: url("/images/IMG_1133.jpg");
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             background-position: center;
           }
 
@@ -99,6 +99,12 @@ export default function about() {
               order: 1;
               height: 1000px;
               width: 100%;
+            }
+          }
+
+          @media screen and (max-width: 500px) {
+            .text {
+              padding: 1rem 3rem;
             }
           }
         `}

@@ -3,9 +3,6 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
-  const toggleLines = `
-    
-  `;
 
   return (
     <section className="navbar">
@@ -70,7 +67,7 @@ const Navbar = () => {
             font-family: Montserrat;
             white-space: nowrap;
             padding: 1rem;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 2px;
             color: brown;
@@ -91,13 +88,40 @@ const Navbar = () => {
           }
 
           .navbar .navitems a {
-            font-size: 1.4rem;
+            display: inline-block;
+            position: relative;
+            transition: all 0.15s;
+            font-size: 1.2rem;
             padding: 0.5rem;
             white-space: nowrap;
           }
 
+          .navbar .navitems a::after {
+            position: absolute;
+            height: 2px;
+            width: 5%;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            background: pink;
+            content: "";
+            bottom: 0;
+            /* animation */
+            -o-transition: 0.15s;
+            -ms-transition: 0.15s;
+            -moz-transition: 0.15s;
+            -webkit-transition: 0.15s;
+            transition: 0.15s;
+          }
+
+          .navbar .navitems a:hover::after {
+            width: 100%;
+            background: #ff748c;
+          }
+
           .burger {
             display: none;
+            margin-right: 1.5rem;
           }
 
           .burger div {
@@ -105,6 +129,7 @@ const Navbar = () => {
             height: 2px;
             margin: 5px;
             background-color: black;
+            transition: all 0.25s;
           }
 
           .toggle .line1 {
@@ -123,15 +148,15 @@ const Navbar = () => {
             .navbar .navitems {
               width: 100%;
             }
-
-            .navbar .navitems a {
-              font-size: 1.2rem;
-            }
           }
 
           @media screen and (max-width: 960px) {
             body {
               overflow-x: hidden;
+            }
+
+            .navbar .logo {
+              margin: 0;
             }
 
             .navbar .navitems {
@@ -152,17 +177,6 @@ const Navbar = () => {
             .burger {
               display: block;
               cursor: pointer;
-            }
-          }
-
-          @keyframes navLinkFade {
-            from {
-              opacity: 0;
-              transform: translateX(50px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(0px);
             }
           }
         `}

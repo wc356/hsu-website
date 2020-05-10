@@ -1,7 +1,7 @@
 import React from "react";
 
 const About = () => (
-  <section className="about">
+  <section>
     <h1>ABOUT</h1>
     <p>
       Violist <span>Serena Hsu</span> is currently pursuing a master’s degree at
@@ -50,6 +50,45 @@ const About = () => (
           font-size: 1.35rem;
           font-weight: 700;
           color: brown;
+        }
+
+        @media screen and (max-width: 1400px) {
+          section {
+            padding: 7rem;
+          }
+
+          section h1 {
+            font-size: 2.25rem;
+          }
+
+          section p {
+            font-size: 1.15rem;
+            line-height: 2.25;
+          }
+
+          section p span {
+            font-size: 1.2rem;
+          }
+        }
+
+        @media screen and (max-width: 960px) {
+          section {
+            padding: 3rem;
+          }
+
+          section h1 {
+            padding-bottom: 1rem;
+            font-size: 1.8rem;
+          }
+
+          section p {
+            font-size: 1rem;
+            line-height: 2;
+          }
+
+          section p span {
+            font-size: 1.05rem;
+          }
         }
       `}
     </style>
