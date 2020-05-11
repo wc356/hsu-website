@@ -91,7 +91,7 @@ export default function BySerena() {
 
     return (
       <section className="head">
-        <h1>My Blog.</h1>
+        <h1>👺 Woo's Blog 👹</h1>
         <div className="head-items">
           <p>
             <span>
@@ -106,9 +106,11 @@ export default function BySerena() {
               </div>
               <div className="profile--text-date">
                 <p>
-                  <span></span>Serena Hsu | October 99, 2080
+                  <span>Serena Hsu</span> | October 99, 2080
                 </p>
-                <p>Share F | P | T</p>
+                <p>
+                  <span className="italic">share</span> F | P | T
+                </p>
               </div>
             </div>
           </div>
@@ -176,6 +178,14 @@ export default function BySerena() {
               width: 100%;
               justify-content: space-between;
               padding-left: 1rem;
+            }
+            .profile .profile--text-date span {
+              vertical-align: baseline;
+              font-weight: 600;
+            }
+            .profile .profile--text-date .italic {
+              font-weight: 400;
+              font-style: italic;
             }
 
             .profile--pic {
