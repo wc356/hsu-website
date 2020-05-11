@@ -2,6 +2,7 @@ import React from "react";
 
 import Layout from "../src/components/Layout";
 import videos from "../src/database/videos";
+import colors from "../styles/theme";
 
 export default function media() {
   const FeaturedVideos = () => {
@@ -62,6 +63,7 @@ export default function media() {
             }
 
             .card-list .card h1 {
+              color: ${colors.black.l};
               font-size: 3rem;
               font-weight: 300;
             }
@@ -106,6 +108,10 @@ export default function media() {
               justify-content: center;
               margin-bottom: 5rem;
               line-height: 1.7;
+            }
+
+            .video-list .text .card-title {
+              color: ${colors.black.l};
             }
 
             .card-title {

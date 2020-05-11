@@ -12,6 +12,7 @@ export default function Layout(props) {
 
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Baskervville&display=swap");
 
         html,
         body {

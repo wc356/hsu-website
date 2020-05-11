@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import colors from "../../styles/theme";
 import Link from "next/link";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
+
+  // // when navActive is True, mount the CSS file -> burger div animation:
 
   return (
     <section className="navbar">
@@ -39,7 +43,7 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div className="burger toggle" onClick={() => setNavActive(!navActive)}>
+        <div className="burger" onClick={() => setNavActive(!navActive)}>
           <div className="line1"></div>
           <div className="line2"></div>
           <div className="line3"></div>
@@ -55,8 +59,9 @@ const Navbar = () => {
             width: 100vw;
             background: white;
             font-family: "Roboto", sans-serif;
-            min-height: 8vh;
+            min-height: 10vh;
             align-items: center;
+            border-bottom: 1px solid ${colors.gray.l};
           }
 
           .navbar .logo {
@@ -88,6 +93,7 @@ const Navbar = () => {
           }
 
           .navbar .navitems a {
+            color: ${colors.black.l};
             display: inline-block;
             position: relative;
             transition: all 0.15s;
@@ -99,7 +105,7 @@ const Navbar = () => {
           .navbar .navitems a::after {
             position: absolute;
             height: 2px;
-            width: 5%;
+            width: 0%;
             margin: 0 auto;
             left: 0;
             right: 0;
@@ -132,15 +138,15 @@ const Navbar = () => {
             transition: all 0.25s;
           }
 
-          .toggle .line1 {
+          .burger .line1 {
             transform: ${navActive && `rotate(-45deg) translate(-4px, 6px)`};
           }
 
-          .toggle .line2 {
+          .burger .line2 {
             opacity: ${navActive && `0`};
           }
 
-          .toggle .line3 {
+          .burger .line3 {
             transform: ${navActive && `rotate(45deg) translate(-4px, -6px)`};
           }
 
