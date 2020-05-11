@@ -102,6 +102,10 @@ const Navbar = () => {
             white-space: nowrap;
           }
 
+          .navbar .navitems a:hover {
+            transform: translateY(-3px);
+          }
+
           .navbar .navitems a::after {
             position: absolute;
             height: 2px;
