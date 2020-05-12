@@ -86,7 +86,6 @@ export default function about() {
               align-items: center;
               height: 100%;
               width: 100vw;
-              background-color: pink;
             }
 
             .text {

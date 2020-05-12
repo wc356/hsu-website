@@ -91,7 +91,7 @@ export default function BySerena() {
 
     return (
       <section className="head">
-        <h1>👺 Woo's Blog 👹</h1>
+        <h1>Blog Title Here.</h1>
         <div className="head-items">
           <p>
             <span>
