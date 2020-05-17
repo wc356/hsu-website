@@ -32,7 +32,6 @@ export default function concerts() {
         {`
           .flex-container {
             display: flex;
-            background: pink;
             justify-content: center;
           }
 
