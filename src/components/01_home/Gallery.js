@@ -1,5 +1,6 @@
 import React from "react";
-import imagesGallery from "../database/images";
+
+import imagesGallery from "../../database/images";
 
 const Gallery = () => (
   <section className="gallery-container">

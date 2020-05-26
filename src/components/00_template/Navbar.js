@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import colors from "../../styles/theme";
+import colors from "../../../styles/theme";
 import Link from "next/link";
 
 const Navbar = () => {
