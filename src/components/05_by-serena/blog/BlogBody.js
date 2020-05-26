@@ -202,23 +202,54 @@ const BlogBody = () => {
     </section>
   );
 
-  const BlogNavbar = () => (
+  const BlogFooter = () => (
     <section className="nav">
+      <div className="flex-container">
+        <div className="left">
+          <h1>Tags:</h1>
+          <p>
+            <span>#Music #Concert #Travel #Viola</span>
+          </p>
+        </div>
+        <div className="right">
+          <a href="#">SHARE</a>
+        </div>
+      </div>
+
       <style jsx>
         {`
           .nav {
             height: 100%;
             margin-top: 2rem;
+            color: ${colors.black.l};
           }
-
-          .nav::before {
+          .nav::before,
+          .nav::after {
             content: "";
-            background: ${colors.gray.xd};
+            background: ${colors.gray.m};
             height: 1px;
-            width: 85%;
+            width: 90%;
             position: absolute;
             margin: 0 auto;
             transform: translateX(-50%);
+          }
+
+          .flex-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 2.2rem 2rem;
+            align-items: center;
+          }
+          .flex-container .left {
+            text-align: left;
+          }
+
+          h1 {
+            padding-bottom: 1rem;
+          }
+
+          a {
+            text-decoration: underline;
           }
         `}
       </style>
@@ -232,7 +263,7 @@ const BlogBody = () => {
         <BlogReadTime />
         <BlogAuthorSocial />
         <BlogMainContent />
-        <BlogNavbar />
+        <BlogFooter />
       </section>
 
       <style jsx>
