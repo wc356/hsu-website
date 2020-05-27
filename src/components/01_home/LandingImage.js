@@ -1,9 +1,10 @@
 import React from "react";
+import { landingPic } from "../../database/01_home/index";
 
 const LandingImage = () => (
   <>
     <div className="img-wrapper">
-      <img src="/images/IMG_1385.jpg" alt="picuture-with-viola" />
+      <img src={landingPic.src} alt={landingPic.alt} />
     </div>
 
     <style jsx>

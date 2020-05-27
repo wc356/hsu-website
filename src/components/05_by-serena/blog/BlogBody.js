@@ -102,7 +102,7 @@ const BlogBody = () => {
             padding-left: 1rem;
             font-family: Montserrat;
             text-align: center;
-            color: ${colors.gray.xd};
+            color: ${colors.gray.xxd};
           }
           .profile__text-date span {
             vertical-align: baseline;
@@ -203,28 +203,27 @@ const BlogBody = () => {
   );
 
   const BlogFooter = () => (
-    <section className="nav">
+    <section className="footer">
       <div className="flex-container">
-        <div className="left">
+        <div className="flex-l">
           <h1>Tags:</h1>
           <p>
             <span>#Music #Concert #Travel #Viola</span>
           </p>
         </div>
-        <div className="right">
+        <div className="flex-right">
           <a href="#">SHARE</a>
         </div>
       </div>
 
       <style jsx>
         {`
-          .nav {
-            height: 100%;
+          .footer {
             margin-top: 2rem;
             color: ${colors.black.l};
           }
-          .nav::before,
-          .nav::after {
+          .footer::before,
+          .footer::after {
             content: "";
             background: ${colors.gray.m};
             height: 1px;
@@ -237,10 +236,10 @@ const BlogBody = () => {
           .flex-container {
             display: flex;
             justify-content: space-between;
-            padding: 2.2rem 2rem;
+            padding: 2.2rem 0;
             align-items: center;
           }
-          .flex-container .left {
+          .flex-container .flex-l {
             text-align: left;
           }
 
@@ -256,6 +255,66 @@ const BlogBody = () => {
     </section>
   );
 
+  const BlogFooterNavbar = () => (
+    <section className="navbar">
+      <div className="flex-l">
+        <section className="author-pic">
+          <img src="/images/IMG_0878.jpg" alt="#" />
+        </section>
+        <section className="author-desc">
+          <h1 className="author-desc__name">Serena Hsu</h1>
+          <p className="author-desc__location">New York, NY</p>
+          <p className="author-desc__about">Description About Me.</p>
+        </section>
+      </div>
+      <div className="flex-right"></div>
+
+      <style jsx>
+        {`
+          .navbar {
+            display: flex;
+            padding: 2.2rem 0;
+            justify-content: space-between;
+          }
+          .navbar::after {
+            content: "";
+            background: ${colors.gray.m};
+            height: 1px;
+            width: 90%;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+          }
+
+          .flex-l {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            line-height: 1.5rem;
+          }
+          .flex-l .author-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+          .flex-l .author-pic img {
+            width: 250%;
+            transform: translateX(-48%) translateY(-5%);
+          }
+          .flex-l .author-desc {
+            padding-left: 1.5rem;
+          }
+          .flex-l .author-desc__location,
+          .flex-l .author-desc__about {
+            color: ${colors.gray.xxd};
+          }
+        `}
+      </style>
+    </section>
+  );
+
   return (
     <div className="header-container">
       <BlogTitle />
@@ -264,6 +323,7 @@ const BlogBody = () => {
         <BlogAuthorSocial />
         <BlogMainContent />
         <BlogFooter />
+        <BlogFooterNavbar />
       </section>
 
       <style jsx>

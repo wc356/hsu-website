@@ -5,6 +5,7 @@ const colors = {
     m: "#e0e0e0",
     d: "#d3d3d3",
     xd: "#bababa",
+    xxd: "#878787",
   },
   black: {
     l: "#3f3f3f",
