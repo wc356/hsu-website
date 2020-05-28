@@ -1,8 +1,11 @@
 import React from "react";
 
+import { blogAuthor } from "../../../database/05_by-serena/blog/index";
+
 const BlogImage = () => (
   <section className="image">
-    <img src="/images/IMG_1385.jpg" alt="#" />
+    {/* <img src="/images/IMG_1385.jpg" alt="#" /> */}
+    <img src={blogAuthor.pic} alt={blogAuthor} />
 
     <style jsx>
       {`

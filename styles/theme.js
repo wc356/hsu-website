@@ -1,5 +1,6 @@
 const colors = {
   gray: {
+    xxl: "#fcfcfc",
     xl: "#f9f9f9",
     l: "#ededed",
     m: "#e0e0e0",

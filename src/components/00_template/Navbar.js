@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 import colors from "../../../styles/theme";
-import Link from "next/link";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
