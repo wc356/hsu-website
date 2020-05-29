@@ -132,7 +132,7 @@ const Gallery = () => {
             width: 100%;
             max-width: 120rem;
             margin: auto;
-            padding: 0 1.5rem;
+            padding: 10rem;
           }
         `}
       </style>
