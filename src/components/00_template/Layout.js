@@ -2,14 +2,16 @@ import React from "react";
 
 import Header from "./Header";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 import colors from "../../../styles/theme";
 
 const Layout = (props) => (
-  <>
+  <div className="layout">
     <Header />
     <Navbar />
     <>{props.children}</>
+    <Footer />
 
     <style jsx global>{`
       @import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Lora:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap");
@@ -18,7 +20,6 @@ const Layout = (props) => (
       body {
         font-family: "Lora", serif;
         height: 100%;
-        background: ${colors.gray.xl};
       }
 
       p {
@@ -51,7 +52,7 @@ const Layout = (props) => (
         color: black;
       }
     `}</style>
-  </>
+  </div>
 );
 
 export default Layout;

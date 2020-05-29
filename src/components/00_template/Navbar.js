@@ -49,6 +49,7 @@ const Navbar = () => {
           <div className="line3"></div>
         </div>
       </div>
+
       <style jsx>
         {`
           .navbar {
@@ -61,7 +62,6 @@ const Navbar = () => {
             font-family: "Roboto", sans-serif;
             min-height: 10vh;
             align-items: center;
-            border-bottom: 1px solid ${colors.gray.l};
           }
 
           .navbar .logo {
@@ -125,7 +125,7 @@ const Navbar = () => {
           }
 
           .navbar .navitems a:hover::after {
-            width: 100%;
+            width: 70%;
             background: #ff748c;
           }
 
