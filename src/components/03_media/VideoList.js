@@ -4,7 +4,7 @@ import videos from "../../database/videos";
 import colors from "../../../styles/theme";
 
 const VideoList = () => {
-  const Video = ({ src }) => (
+  const renderVideo = (src) => (
     <div className="media">
       <iframe
         src={src}
@@ -12,7 +12,6 @@ const VideoList = () => {
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
-
       <style jsx>
         {`
           .media {
@@ -23,18 +22,15 @@ const VideoList = () => {
             margin-bottom: 5rem;
             line-height: 1.7;
           }
-
           iframe {
             width: 560px;
             height: 315px;
           }
-
           @media screen and (max-width: 960px) {
             .media {
               margin-bottom: 2rem;
             }
           }
-
           @media screen and (max-width: 560px) {
             iframe {
               max-width: 560px;
@@ -46,14 +42,13 @@ const VideoList = () => {
     </div>
   );
 
-  const VideoDescription = ({ video: { title, date, description } }) => (
+  const renderVideoDescription = (video) => (
     <div className="text">
       <div className="card-title">
-        <h1>{title}</h1>
-        <h3>{date}</h3>
+        <h1>{video.title}</h1>
+        <h3>{video.date}</h3>
       </div>
-      <p>{description}</p>
-
+      <p>{video.description}</p>
       <style jsx>
         {`
           .text {
@@ -65,12 +60,10 @@ const VideoList = () => {
             line-height: 1.7;
             padding: 3rem;
           }
-
           .text .card-title {
             color: ${colors.black.l};
             margin-bottom: 1rem;
           }
-
           @media screen and (max-width: 960px) {
             .text {
               margin-bottom: 2rem;
@@ -86,11 +79,10 @@ const VideoList = () => {
     <ul className="video-list">
       {videos.map((video) => (
         <li key={video.title}>
-          <Video src={video.src} />
-          <VideoDescription video={video} />
+          {renderVideo(video.src)}
+          {renderVideoDescription(video)}
         </li>
       ))}
-
       <style jsx>
         {`
           .video-list {
@@ -99,13 +91,11 @@ const VideoList = () => {
             height: 100%;
             width: 100%;
           }
-
           .video-list li {
             display: flex;
             justify-content: space-evenly;
             padding: 0;
           }
-
           @media screen and (max-width: 960px) {
             .video-list li {
               flex-direction: column;
@@ -113,7 +103,6 @@ const VideoList = () => {
               margin-bottom: 5rem;
             }
           }
-
           @media screen and (max-width: 560px) {
             .video-list li {
               align-items: left;

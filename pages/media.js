@@ -10,7 +10,6 @@ const Media = () => (
       <Header />
       <VideoList />
     </div>
-
     <style jsx>
       {`
         .flex-container {
