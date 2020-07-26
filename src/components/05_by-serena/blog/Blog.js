@@ -8,25 +8,31 @@ import colors from "../../../../styles/theme";
 const Blog = ({ title, setState }) => {
   const post = BLOG_POSTS.find((post) => post.title === title);
 
-  const renderImg = (pic) => (
-    <div className="img-container">
-      <img src={`/images/05_by-serena/blog/${pic}`} />
-      <style jsx>
-        {`
-          .img-container {
-            height: 500px;
-            overflow: hidden;
-            background: ${colors.gray.l};
-          }
-          img {
-            height: auto;
-            width: 100%;
-            object-fit: cover;
-          }
-        `}
-      </style>
-    </div>
-  );
+  const renderImg = (pic) => {
+    const PIC_PATH = `/images/05_by-serena/blog/${pic}`;
+    return (
+      <div className="img-container">
+        <img src={PIC_PATH} />
+        <style jsx>
+          {`
+            .img-container {
+              height: 500px;
+              overflow: hidden;
+              background: url(${PIC_PATH});
+              background-size: cover;
+              display: flex;
+              align-items: center;
+            }
+            img {
+              height: auto;
+              width: 100%;
+              object-fit: cover;
+            }
+          `}
+        </style>
+      </div>
+    );
+  };
 
   const renderTitle = (title) => (
     <div className="title-container">
@@ -212,12 +218,14 @@ const Blog = ({ title, setState }) => {
 
     return (
       <section className="footer">
+        <hr />
         <div className="flex-container">
           <div className="flex-left">{renderTags(tags)}</div>
           <div className="flex-right">
             <a href="#">SHARE</a>
           </div>
         </div>
+        <hr />
         <style jsx>
           {`
             a {
@@ -227,16 +235,6 @@ const Blog = ({ title, setState }) => {
               margin-top: 2rem;
               color: ${colors.black.l};
             }
-            .footer::before,
-            .footer::after {
-              content: "";
-              background: ${colors.gray.m};
-              height: 1px;
-              width: 90%;
-              position: absolute;
-              margin: 0 auto;
-              transform: translateX(-50%);
-            }
             .flex-container {
               display: flex;
               justify-content: space-between;
@@ -245,6 +243,11 @@ const Blog = ({ title, setState }) => {
             }
             .flex-left {
               text-align: left;
+            }
+            hr {
+              height: 1px;
+              border-width: 0;
+              background: ${colors.gray.xd};
             }
           `}
         </style>
@@ -280,8 +283,8 @@ const Blog = ({ title, setState }) => {
         <p>Description About Me.</p>
         <style jsx>
           {`
-            h1 {
-              padding-left: 1.5rem;
+            .author-desc {
+              margin-left: 1.5rem;
             }
             p {
               color: ${colors.gray.xxd};
@@ -297,23 +300,13 @@ const Blog = ({ title, setState }) => {
           {renderAuthorPic()}
           {renderAuthorDesc()}
         </div>
-        <div className="flex-right"></div>
+        <div className="flex-right" />
         <style jsx>
           {`
             .navbar {
               display: flex;
               padding: 2.2rem 0;
               justify-content: space-between;
-            }
-            .navbar::after {
-              content: "";
-              background: ${colors.gray.m};
-              height: 1px;
-              width: 90%;
-              position: absolute;
-              margin: 0 auto;
-              left: 0;
-              right: 0;
             }
             .flex-left {
               display: flex;

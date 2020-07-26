@@ -58,7 +58,7 @@ export const BLOG_POSTS = [
   {
     id: "my-second-blog-post",
     date: "July 23, 2020",
-    title: "My second Blog Post!",
+    title: "My Second Blog Post!",
     body: [
       "This is my first paragraph.",
       "This is my second paragraph.",
