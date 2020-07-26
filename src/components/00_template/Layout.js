@@ -2,7 +2,6 @@ import React from "react";
 
 import Header from "./Header";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
 
 import colors from "../../../styles/theme";
 
@@ -11,7 +10,6 @@ const Layout = (props) => (
     <Header />
     <Navbar />
     <>{props.children}</>
-
     <style jsx global>{`
       @import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Lora:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap");
 
@@ -48,7 +46,7 @@ const Layout = (props) => (
       }
 
       a:visited {
-        color: black;
+        color: ${colors.blue.main};
       }
     `}</style>
   </div>

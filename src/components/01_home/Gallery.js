@@ -1,19 +1,19 @@
 import React from "react";
 
-import { galleryPics } from "../../database/01_home/index";
+import { HOME_GALLERY_PICS } from "../../database/index";
 
 const Gallery = () => {
-  const GalleryPictures = () => (
+  const renderGalleryPics = () => (
     <div className="image-gallery">
-      {galleryPics["pics"].map((pic) => {
-        const picPath = galleryPics.rootDir + "/" + pic.picName;
-        return (
-          <a key={pic.id} href={picPath} className={`img-${pic.id}`}>
-            <ion-icon size="large" name="scan-outline"></ion-icon>
-          </a>
-        );
-      })}
-
+      {HOME_GALLERY_PICS.pics.map((pic) => (
+        <a
+          key={pic.id}
+          href={`${HOME_GALLERY_PICS.rootDir}/${pic.picName}`}
+          className={`img-${pic.id}`}
+        >
+          <ion-icon size="large" name="scan-outline" />
+        </a>
+      ))}
       <style jsx>
         {`
           .image-gallery {
@@ -72,45 +72,45 @@ const Gallery = () => {
           .img-1 {
             grid-area: img-1;
             min-height: 51.5rem;
-            background-image: url("${galleryPics.rootDir}/IMG_0001.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0001.jpg");
           }
           .img-2 {
             grid-area: img-2;
-            background-image: url("${galleryPics.rootDir}/IMG_0002.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0002.jpg");
           }
           .img-3 {
             grid-area: img-3;
-            background-image: url("${galleryPics.rootDir}/IMG_0003.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0003.jpg");
           }
           .img-4 {
             grid-area: img-4;
-            background-image: url("${galleryPics.rootDir}/IMG_0004.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0004.jpg");
           }
           .img-5 {
             grid-area: img-5;
             min-height: 51.5rem;
-            background-image: url("${galleryPics.rootDir}/IMG_0005.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0005.jpg");
           }
           .img-6 {
             grid-area: img-6;
-            background-image: url("${galleryPics.rootDir}/IMG_0006.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0006.jpg");
           }
           .img-7 {
             grid-area: img-7;
             min-height: 51.5rem;
-            background-image: url("${galleryPics.rootDir}/IMG_0007.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0007.jpg");
           }
           .img-8 {
             grid-area: img-8;
-            background-image: url("${galleryPics.rootDir}/IMG_0008.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0008.jpg");
           }
           .img-9 {
             grid-area: img-9;
-            background-image: url("${galleryPics.rootDir}/IMG_0009.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0009.jpg");
           }
           .img-10 {
             grid-area: img-10;
-            background-image: url("${galleryPics.rootDir}/IMG_0010.jpg");
+            background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0010.jpg");
           }
 
           @media screen and (max-width: 900px) {
@@ -124,8 +124,7 @@ const Gallery = () => {
 
   return (
     <section className="gallery-container">
-      <GalleryPictures />
-
+      {renderGalleryPics()}
       <style jsx>
         {`
           .gallery-container {

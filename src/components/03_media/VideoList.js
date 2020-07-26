@@ -1,6 +1,6 @@
 import React from "react";
 
-import videos from "../../database/videos";
+import { MEDIA_FEATURED_VIDEOS as videos } from "../../database/index";
 import colors from "../../../styles/theme";
 
 const VideoList = () => {

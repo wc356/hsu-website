@@ -5,20 +5,43 @@ import colors from "../../../styles/theme";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
+
+  const renderLogo = (path, logo) => (
+    <>
+      <Link href={path}>
+        <a>{logo}</a>
+      </Link>
+      <style jsx>
+        {`
+          a {
+            font-family: Montserrat;
+            white-space: nowrap;
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: ${colors.blue.main};
+          }
+        `}
+      </style>
+    </>
+  );
+
   const renderNavLink = (path, title) => (
     <li>
-      <Link href={`/${path}`}>
+      <Link href={path}>
         <a>{title}</a>
       </Link>
       <style jsx>
         {`
           a {
-            color: ${colors.black.l};
+            color: ${colors.blue.main};
             display: inline-block;
             position: relative;
             transition: all 0.15s;
             font-size: 1.2rem;
             padding: 0.5rem;
+            font-weight: 500;
             white-space: nowrap;
           }
           a:hover {
@@ -31,7 +54,7 @@ const Navbar = () => {
             margin: 0 auto;
             left: 0;
             right: 0;
-            background: pink;
+            background: ${colors.blue.main};
             content: "";
             bottom: 0;
             /* animation */
@@ -43,12 +66,13 @@ const Navbar = () => {
           }
           a:hover::after {
             width: 70%;
-            background: #ff748c;
+            background: ${colors.blue.main};
           }
         `}
       </style>
     </li>
   );
+
   const renderNavBurger = () => (
     <>
       <div className="line1" />
@@ -60,7 +84,7 @@ const Navbar = () => {
             width: 25px;
             height: 2px;
             margin: 5px;
-            background-color: black;
+            background-color: ${colors.blue.main};
             transition: all 0.25s;
           }
           .line1 {
@@ -79,18 +103,14 @@ const Navbar = () => {
 
   return (
     <section className="navbar">
-      <div className="logo">
-        <Link href="/">
-          <a>SERENA HSU</a>
-        </Link>
-      </div>
+      <div className="logo">{renderLogo("/", "SERENA HSU")}</div>
       <div className="navitems-wrapper">
         <ul className="navitems">
-          {renderNavLink("about", "about")}
-          {renderNavLink("media", "media")}
-          {renderNavLink("concerts", "concerts")}
-          {renderNavLink("by-serena", "by Serena")}
-          {renderNavLink("gallery", "gallery")}
+          {renderNavLink("/about", "about")}
+          {renderNavLink("/media", "media")}
+          {renderNavLink("/concerts", "concerts")}
+          {renderNavLink("/by-serena", "by Serena")}
+          {renderNavLink("/gallery", "gallery")}
         </ul>
         <div className="burger" onClick={() => setNavActive(!navActive)}>
           {renderNavBurger()}
@@ -104,22 +124,14 @@ const Navbar = () => {
             position: sticky;
             top: 0;
             width: 100vw;
-            background: white;
+            background: #fff;
             font-family: "Roboto", sans-serif;
             height: 6rem;
             align-items: center;
+            box-shadow: 2px 2px 7px rgba(97, 97, 97, 0.2);
           }
           .navbar .logo {
             margin: 0 45px;
-          }
-          .navbar .logo a {
-            font-family: Montserrat;
-            white-space: nowrap;
-            padding: 1rem;
-            font-size: 1.5rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            color: brown;
           }
           .navitems-wrapper {
             font-family: Montserrat;
@@ -155,7 +167,7 @@ const Navbar = () => {
               right: 0;
               height: 92vh;
               top: 8vh;
-              background-color: white;
+              background-color: #fff;
               display: flex;
               flex-direction: column;
               align-items: center;

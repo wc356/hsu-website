@@ -1,8 +1,9 @@
 import React from "react";
 
+import colors from "../../../styles/theme";
+
 const About = () => (
   <section>
-    <h1>ABOUT</h1>
     <p>
       Violist <span>Serena Hsu</span> is currently pursuing a master’s degree at
       <span> The Juilliard School.</span> She has studied at{" "}
@@ -12,12 +13,9 @@ const About = () => (
       </span>{" "}
       Her main mentors include Hsin-Yun Huang, Misha Amory, Jean Sulem, Lynne
       Ramsey, and Jeffrey Irvine. She is a prizewinner of various competitions,
-      including—
-      <span>
-        YoungArts, the Ohio Viola Society Competition, Saint Paul String Quartet
-        Competition, and the OSTA Chamber Music Competition.
-      </span>{" "}
-      Additionally, she has competed at the{" "}
+      including—YoungArts, the Ohio Viola Society Competition, Saint Paul String
+      Quartet Competition, and the OSTA Chamber Music Competition. In addition,
+      she has competed at the{" "}
       <span>
         Fischoff National Chamber Music Competition, was a finalist at the
         American Viola Society Competition, and semi-finalist of the Cecil
@@ -29,27 +27,28 @@ const About = () => (
     <style jsx>
       {`
         section {
-          padding: 7rem 20rem;
+          padding: 5rem 15rem;
+          background: ${colors.blue.l};
         }
 
         section h1 {
-          color: brown;
-          font-weight: 400;
+          color: #fff;
+          font-weight: 500;
           padding-bottom: 3rem;
-          font-size: 3.5rem;
+          font-size: 2rem;
           letter-spacing: 5px;
         }
 
         section p {
-          font-size: 1.3rem;
-          line-height: 2.5;
-          color: #343434;
+          font-family: "Montserrat";
+          font-size: 1.1rem;
+          line-height: 3;
+          color: #fff;
         }
 
         section p span {
-          font-size: 1.35rem;
-          font-weight: 700;
-          color: brown;
+          font-weight: 600;
+          color: #fff;
         }
 
         @media screen and (max-width: 1400px) {
