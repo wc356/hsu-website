@@ -14,6 +14,10 @@ const colors = {
     d: "#191919",
     xd: "#0d0d0d",
   },
+  blue: {
+    main: "#4169e1",
+    l: "#4285F4",
+  },
 };
 
 export default colors;

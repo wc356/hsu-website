@@ -1,7 +1,7 @@
 // Libraries
 import React from "react";
 // Database
-import { BLOG_POSTS } from "../../../database/index";
+import { BLOG_POSTS, AUTHOR_ABOUT } from "../../../database/index";
 // Styles
 import colors from "../../../../styles/theme";
 
@@ -216,14 +216,14 @@ const Blog = ({ title, setState }) => {
       </>
     );
 
+    const renderLink = (href, text) => <a href={href}>{text}</a>;
+
     return (
       <section className="footer">
         <hr />
         <div className="flex-container">
           <div className="flex-left">{renderTags(tags)}</div>
-          <div className="flex-right">
-            <a href="#">SHARE</a>
-          </div>
+          <div className="flex-right">{renderLink("#", "SHARE")}</div>
         </div>
         <hr />
         <style jsx>
@@ -255,7 +255,7 @@ const Blog = ({ title, setState }) => {
     );
   };
 
-  const renderFooterNavbar = () => {
+  const renderFooterNavbar = (authorDesc) => {
     const renderAuthorPic = () => (
       <section className="author-pic">
         <img src="/images/IMG_0878.jpg" alt="#" />
@@ -276,11 +276,11 @@ const Blog = ({ title, setState }) => {
       </section>
     );
 
-    const renderAuthorDesc = () => (
+    const renderAuthorDesc = (authorDesc) => (
       <section className="author-desc">
-        <h1>Serena Hsu</h1>
-        <p>New York, NY</p>
-        <p>Description About Me.</p>
+        <h1>{authorDesc.name}</h1>
+        <p>{authorDesc.location}</p>
+        <p>{authorDesc.description}</p>
         <style jsx>
           {`
             .author-desc {
@@ -298,7 +298,7 @@ const Blog = ({ title, setState }) => {
       <section className="navbar">
         <div className="flex-left">
           {renderAuthorPic()}
-          {renderAuthorDesc()}
+          {renderAuthorDesc(authorDesc)}
         </div>
         <div className="flex-right" />
         <style jsx>
@@ -330,7 +330,7 @@ const Blog = ({ title, setState }) => {
           {renderAuthorSocial(post.date)}
           {renderBody(post.body)}
           {renderFooter(post.tags)}
-          {renderFooterNavbar()}
+          {renderFooterNavbar(AUTHOR_ABOUT)}
         </section>
       </div>
       <style jsx>

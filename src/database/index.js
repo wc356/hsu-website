@@ -71,3 +71,9 @@ export const BLOG_POSTS = [
     pic: "gray-ceramic-vase.jpg",
   },
 ];
+
+export const AUTHOR_ABOUT = {
+  name: "Serena Hsu",
+  location: "New York, NY",
+  description: "Pursuing Master of Music at The Juilliard School",
+};

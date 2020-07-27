@@ -42,7 +42,7 @@ const BySerena = () => {
           }
           .flex-item:hover {
             color: pink;
-            background-color: ${colors.gray.xl};
+            background-color: ${colors.gray.l};
           }
           .flex-item:hover .marker h1 {
             color: pink;
