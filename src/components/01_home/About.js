@@ -1,5 +1,6 @@
+// Libraries
 import React from "react";
-
+// Styles
 import colors from "../../../styles/theme";
 
 const About = () => (
@@ -23,14 +24,12 @@ const About = () => (
       </span>{" "}
       Serena is an avid chamber musician and dedicated pedagogue.
     </p>
-
     <style jsx>
       {`
         section {
           padding: 5rem 15rem;
-          background: ${colors.blue.l};
+          background: ${colors.gray.xxd};
         }
-
         section h1 {
           color: #fff;
           font-weight: 500;
@@ -38,53 +37,43 @@ const About = () => (
           font-size: 2rem;
           letter-spacing: 5px;
         }
-
         section p {
           font-family: "Montserrat";
           font-size: 1.1rem;
           line-height: 3;
           color: #fff;
         }
-
         section p span {
           font-weight: 600;
           color: #fff;
         }
-
         @media screen and (max-width: 1400px) {
           section {
             padding: 7rem;
           }
-
           section h1 {
             font-size: 2.25rem;
           }
-
           section p {
             font-size: 1.15rem;
             line-height: 2.25;
           }
-
           section p span {
             font-size: 1.2rem;
           }
         }
-
         @media screen and (max-width: 960px) {
           section {
             padding: 3rem;
           }
-
           section h1 {
             padding-bottom: 1rem;
             font-size: 1.8rem;
           }
-
           section p {
             font-size: 1rem;
             line-height: 2;
           }
-
           section p span {
             font-size: 1.05rem;
           }

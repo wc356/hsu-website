@@ -18,6 +18,10 @@ const colors = {
     main: "#4169e1",
     l: "#4285F4",
   },
+  pink: {
+    l: "#ffc7d5",
+    m: "#ffb3c6",
+  },
 };
 
 export default colors;

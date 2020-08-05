@@ -1,14 +1,33 @@
-import React from "react";
+// Libraries
+import React, { Fragment } from "react";
+// Styles
+import colors from "../../../styles/theme";
 
 const ConcertsSchedule = () => {
+  const renderTitle = (title) => (
+    <Fragment>
+      <h1>{title}</h1>
+      <style jsx>
+        {`
+          h1 {
+            margin-bottom: 3rem;
+            font-weight: 400;
+            font-size: 2.5rem;
+          }
+        `}
+      </style>
+    </Fragment>
+  );
+
   const renderHeader = (header) => (
-    <React.Fragment>
+    <Fragment>
       <li className="header">{header}</li>
       <style jsx>
         {`
           .header {
-            border-bottom: 1px solid black;
+            font-size: 1.3rem;
             font-weight: 600;
+            color: brown;
           }
           li {
             padding: 0.5rem;
@@ -18,7 +37,7 @@ const ConcertsSchedule = () => {
           }
         `}
       </style>
-    </React.Fragment>
+    </Fragment>
   );
 
   const renderConcertDetails = ({
@@ -28,7 +47,7 @@ const ConcertsSchedule = () => {
     repertoire,
     ticket_price,
   }) => (
-    <React.Fragment>
+    <Fragment>
       <li>{date}</li>
       <li>{location}</li>
       <li>{venue}</li>
@@ -44,12 +63,12 @@ const ConcertsSchedule = () => {
           }
         `}
       </style>
-    </React.Fragment>
+    </Fragment>
   );
 
   return (
     <section className="concerts">
-      <h1>CONCERTS PAGE</h1>
+      {renderTitle("Upcoming Concerts")}
       <ul className="concerts-grid">
         {renderHeader("Date")}
         {renderHeader("Location")}
@@ -57,11 +76,11 @@ const ConcertsSchedule = () => {
         {renderHeader("Repertoire & Colleagues")}
         {renderHeader("Tickets")}
         {renderConcertDetails({
-          date: "-",
-          location: "-",
-          venue: "-",
-          repertoire: "-",
-          ticket_price: "-",
+          date: "4/20/19",
+          location: "Robert Kennedy Hall",
+          venue: "International Fellow",
+          repertoire: "Act 5 Concerto",
+          ticket_price: "FREE",
         })}
       </ul>
       <style jsx>
@@ -73,21 +92,15 @@ const ConcertsSchedule = () => {
             padding: 1rem;
             background: white;
             margin-top: 1rem;
-          }
-          .concerts h1 {
-            font-weight: 500;
-            letter-spacing: 3px;
-            padding: 1rem;
+            margin-top: 8rem;
           }
           .concerts-grid {
             display: grid;
-            padding: 2rem;
-            box-shadow: 3px 3px #000;
+            padding: 4rem;
+            box-shadow: 5px 5px 20px ${colors.gray.xxd};
             grid-template-columns; 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: auto auto auto;
-            column-gap: 1rem;
-            border: 1px gray solid;
-            border-radius: 10px;
+            column-gap: 3rem;
             row-gap: 2rem;
             grid-template-areas:
               "item-1 item-2 item-3 item-4 item-5"

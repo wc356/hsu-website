@@ -1,30 +1,36 @@
-import React, { useState } from "react";
+// Libraries
+import React, { Fragment, useState } from "react";
+// Components
 import Link from "next/link";
-
+// Styles
 import colors from "../../../styles/theme";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
 
   const renderLogo = (path, logo) => (
-    <>
+    <Fragment>
       <Link href={path}>
         <a>{logo}</a>
       </Link>
       <style jsx>
         {`
           a {
-            font-family: Montserrat;
+            font-family: Dallastown;
             white-space: nowrap;
             padding: 1rem;
-            font-size: 1.5rem;
+            font-size: 3.75rem;
             font-weight: 600;
             letter-spacing: 2px;
-            color: ${colors.blue.main};
+            transition: all 0.15s;
+            color: ${colors.gray.xxd};
+          }
+          a:hover {
+            opacity: 0.5;
           }
         `}
       </style>
-    </>
+    </Fragment>
   );
 
   const renderNavLink = (path, title) => (
@@ -35,7 +41,7 @@ const Navbar = () => {
       <style jsx>
         {`
           a {
-            color: ${colors.blue.main};
+            color: maroon;
             display: inline-block;
             position: relative;
             transition: all 0.15s;
@@ -45,28 +51,8 @@ const Navbar = () => {
             white-space: nowrap;
           }
           a:hover {
-            transform: translateY(-3px);
-          }
-          a::after {
-            position: absolute;
-            height: 2px;
-            width: 0%;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            background: ${colors.blue.main};
-            content: "";
-            bottom: 0;
-            /* animation */
-            -o-transition: 0.15s;
-            -ms-transition: 0.15s;
-            -moz-transition: 0.15s;
-            -webkit-transition: 0.15s;
-            transition: 0.15s;
-          }
-          a:hover::after {
-            width: 70%;
-            background: ${colors.blue.main};
+            transform: translateY(-2px);
+            color: gray;
           }
         `}
       </style>
@@ -74,7 +60,7 @@ const Navbar = () => {
   );
 
   const renderNavBurger = () => (
-    <>
+    <Fragment>
       <div className="line1" />
       <div className="line2" />
       <div className="line3" />
@@ -84,7 +70,7 @@ const Navbar = () => {
             width: 25px;
             height: 2px;
             margin: 5px;
-            background-color: ${colors.blue.main};
+            background-color: brown;
             transition: all 0.25s;
           }
           .line1 {
@@ -98,17 +84,17 @@ const Navbar = () => {
           }
         `}
       </style>
-    </>
+    </Fragment>
   );
 
   return (
     <section className="navbar">
-      <div className="logo">{renderLogo("/", "SERENA HSU")}</div>
+      <div className="logo">{renderLogo("/", "Serena Hsu")}</div>
       <div className="navitems-wrapper">
         <ul className="navitems">
           {renderNavLink("/about", "about")}
           {renderNavLink("/media", "media")}
-          {renderNavLink("/concerts", "concerts")}
+          {renderNavLink("/studio", "studio")}
           {renderNavLink("/by-serena", "by Serena")}
           {renderNavLink("/gallery", "gallery")}
         </ul>
@@ -119,7 +105,7 @@ const Navbar = () => {
       <style jsx>
         {`
           .navbar {
-            z-index: 1;
+            z-index: 2;
             display: flex;
             position: sticky;
             top: 0;

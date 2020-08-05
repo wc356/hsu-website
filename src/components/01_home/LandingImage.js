@@ -1,16 +1,17 @@
+// Libraries
 import React from "react";
-
+// Database
 import { HOME_LANDING_PICTURE as landingPic } from "../../database/index";
-
+// Styles
 import colors from "../../../styles/theme";
 
 const LandingImage = () => {
-  const arrowStyle = `3px solid ${colors.blue.l}`;
+  const arrowStyle = `5px solid ${colors.black.l}`;
 
   return (
     <>
       <div className="img-wrapper">
-        <div id="img" />
+        <div className="landing-background" />
         <div className="arrow-container">
           <span role="graphic-arrow" />
         </div>
@@ -18,15 +19,14 @@ const LandingImage = () => {
       <style jsx>
         {`
           .img-wrapper {
-            padding: 7rem 10rem;
             height: 900px;
             overflow: hidden;
+            text-align: center;
           }
-          #img {
-            background-image: url(${landingPic.src});
+          .landing-background {
             height: 100%;
+            background-image: url(${landingPic.src});
             background-attachment: fixed;
-            // background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
           }
