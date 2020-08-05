@@ -211,6 +211,9 @@ const Blog = ({ title, setState }) => {
             h1 {
               padding-bottom: 1rem;
             }
+            p {
+              color: ${colors.gray.xxd};
+            }
           `}
         </style>
       </>
