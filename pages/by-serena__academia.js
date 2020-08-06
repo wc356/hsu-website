@@ -1,10 +1,9 @@
 // Libraries
-import React, { useState, Fragment } from "react";
+import React from "react";
 // Database
 import { ACADEMIA_POSTS, AUTHOR_ABOUT } from "../src/database/index";
 // Components
 import Layout from "../src/components/00_template/Layout";
-import Blog from "../src/components/05_by-serena/blog/Blog";
 // Styles
 import colors from "../styles/theme";
 
