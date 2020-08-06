@@ -67,7 +67,11 @@ const BySerena = () => {
   return (
     <Layout>
       <div className="flex-container">
-        {renderNavSection({ path: "#", num: "01.", title: "Journal" })}
+        {renderNavSection({
+          path: "/by-serena__academia",
+          num: "01.",
+          title: "Academia",
+        })}
         {renderNavSection({ path: "#", num: "02.", title: "Projects" })}
         {renderNavSection({
           path: "/by-serena__blog",

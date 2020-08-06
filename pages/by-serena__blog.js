@@ -8,7 +8,7 @@ import Blog from "../src/components/05_by-serena/blog/Blog";
 // Styles
 import colors from "../styles/theme";
 
-const bySerenaBlog = () => {
+const BySerenaBlog = () => {
   const [state, setState] = useState("BLOG_HOME");
   const [blogTitle, setBlogTitle] = useState("");
 
@@ -45,12 +45,57 @@ const bySerenaBlog = () => {
       );
     };
 
+    const renderTitle = (title) => (
+      <div className="title-container">
+        <h1>{title}</h1>
+        <style jsx>
+          {`
+            .title-container {
+              width: 100%;
+              text-align: center;
+            }
+            h1 {
+              font-size: 1rem;
+              font-weight: 500;
+              margin-bottom: 1rem;
+              color: ${colors.pink.d};
+            }
+          `}
+        </style>
+      </div>
+    );
+
+    const renderDate = (date) => (
+      <div className="date-container">
+        <p>{date}</p>
+        <style jsx>
+          {`
+            .date-container {
+              display: flex;
+              justify-content: flex-end;
+              width: 100%;
+            }
+            p {
+              color: gray;
+              font-family: Montserrat;
+              font-size: 0.9rem;
+            }
+          `}
+        </style>
+      </div>
+    );
+
     const renderTags = (tags) => (
-      <div className="container">
+      <div className="tags-container">
         <p>{tags.map((tag) => `#${tag} `)}</p>
         <style jsx>
           {`
-            .container {
+            .tags-container {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: flex-end;
+              justify-content: flex-end;
               text-align: right;
             }
             p {
@@ -66,9 +111,9 @@ const bySerenaBlog = () => {
         {posts.map((post) => (
           <button key={post.id} onClick={() => handleBtnClick(post.title)}>
             {renderImg(post.pic)}
-            <h1>{post.title}</h1>
-            <p>{post.date}</p>
-            <div className="tags-container">{renderTags(post.tags)}</div>
+            {renderTitle(post.title)}
+            {renderDate(post.date)}
+            {renderTags(post.tags)}
           </button>
         ))}
         <style jsx>
@@ -102,23 +147,6 @@ const bySerenaBlog = () => {
             button:hover {
               color: ${colors.blue.main};
             }
-            h1 {
-              font-size: 1rem;
-              font-weight: 500;
-              margin-bottom: 1rem;
-            }
-            p {
-              color: gray;
-              font-family: Montserrat;
-              font-size: 0.9rem;
-            }
-            .tags-container {
-              width: 100%;
-              height: 100%;
-              display: flex;
-              align-items: flex-end;
-              justify-content: flex-end;
-            }
           `}
         </style>
       </div>
@@ -141,4 +169,4 @@ const bySerenaBlog = () => {
   return <Layout>{renderBlogApp()}</Layout>;
 };
 
-export default bySerenaBlog;
+export default BySerenaBlog;
