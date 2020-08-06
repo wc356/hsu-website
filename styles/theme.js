@@ -21,6 +21,7 @@ const colors = {
   pink: {
     l: "#ffc7d5",
     m: "#ffb3c6",
+    d: "#fa8ea9",
   },
 };
 

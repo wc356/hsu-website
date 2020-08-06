@@ -246,6 +246,7 @@ const Blog = ({ title, setState }) => {
             }
             .flex-left {
               text-align: left;
+              max-width: 45rem;
             }
             hr {
               height: 1px;
