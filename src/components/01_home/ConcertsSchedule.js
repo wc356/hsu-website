@@ -76,11 +76,11 @@ const ConcertsSchedule = () => {
         {renderHeader("Repertoire & Colleagues")}
         {renderHeader("Tickets")}
         {renderConcertDetails({
-          date: "4/20/19",
-          location: "Robert Kennedy Hall",
-          venue: "International Fellow",
-          repertoire: "Act 5 Concerto",
-          ticket_price: "FREE",
+          date: "-",
+          location: "-",
+          venue: "-",
+          repertoire: "-",
+          ticket_price: "-",
         })}
       </ul>
       <style jsx>

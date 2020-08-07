@@ -5,6 +5,7 @@ import { BLOG_POSTS } from "../src/database/index";
 // Components
 import Layout from "../src/components/00_template/Layout";
 import Blog from "../src/components/05_by-serena/blog/Blog";
+import BackBtn from "../src/components/00_template/BackBtn";
 // Styles
 import colors from "../styles/theme";
 
@@ -107,17 +108,33 @@ const BySerenaBlog = () => {
     );
 
     return (
-      <div className="blog-landing-container">
-        {posts.map((post) => (
-          <button key={post.id} onClick={() => handleBtnClick(post.title)}>
-            {renderImg(post.pic)}
-            {renderTitle(post.title)}
-            {renderDate(post.date)}
-            {renderTags(post.tags)}
-          </button>
-        ))}
+      <Fragment>
+        <div className="blog-landing-container">
+          <div className="btn-container">
+            <BackBtn
+              href="/by-serena"
+              style={{ background: "gray", color: "white" }}
+              arrStyle={{
+                "border-bottom": "1px solid #fff",
+                "border-right": "1px solid #fff",
+              }}
+            />
+          </div>
+          {posts.map((post) => (
+            <button key={post.id} onClick={() => handleBtnClick(post.title)}>
+              {renderImg(post.pic)}
+              {renderTitle(post.title)}
+              {renderDate(post.date)}
+              {renderTags(post.tags)}
+            </button>
+          ))}
+        </div>
         <style jsx>
           {`
+            .btn-container {
+              margin-right: 2rem;
+              padding-top: 0.7rem;
+            }
             .blog-landing-container {
               padding: 3rem;
               display: flex;
@@ -142,14 +159,14 @@ const BySerenaBlog = () => {
             }
             button:hover {
               transform: translateY(-6px);
-              box-shadow: 3px 3px 10px #bdd6ff;
+              box-shadow: 3px 3px 10px ${colors.pink.m};
             }
             button:hover {
               color: ${colors.blue.main};
             }
           `}
         </style>
-      </div>
+      </Fragment>
     );
   };
 

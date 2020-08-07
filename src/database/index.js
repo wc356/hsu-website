@@ -42,7 +42,7 @@ export const MEDIA_FEATURED_VIDEOS = [
   },
 ];
 
-// Readtime - 265 WPM for avg adult
+// read_time: 265 WPM for avg adult
 export const BLOG_POSTS = [
   {
     id: "my-time-management-during-pandemic",
@@ -55,7 +55,7 @@ export const BLOG_POSTS = [
       "Post spring break, I surprisingly kept my routine from the online semester probably due to the momentum of school work. However, once mid July came around…. 😳 It was a battle between my brain telling me to get work done, and my wandering thoughts of sleeping in more or watching another episode on Netflix… I’m sure that’s familiar to you all.. If not… please share your secret. Obviously, I was conscious of the fact that I wasn’t motivated anymore and lost my passion to get up and practice. Of course I can complain that it’s due to not having any performances and no upcoming collaborations. At that time, that was my “excuse” to watch another episode or sleep in more. Gradually, that weighed on me emotionally and I just didn’t feel good. I’m a very deadline driven person and I need structure, otherwise I become a blob essentially. 🙃",
       "I took matters into my own hands. Yes, I don’t have any concerts or recitals coming up. “What can I do?” I asked myself. “Create your own opportunities!” So I rolled out of bed one day, and contacted a friend who’s a pianist and asked if she would be interested in collaborating virtually. I made a list of all the short pieces I wanted to learn (obviously short romantic works cause I’m all about that 😍😭🥰🥺). That resulted in my “Hidden Gems” project which kept me sane during my moments of laziness. I also decided to focus a lot on Etudes in order to refine my technique. Thankfully, I have many etudes that I love and have always wanted to learn. Now that I have “more time”, I decided to also create my “Etude Studies” project. Of course, these projects aren’t pressed for time, but I’ve used them as a source of motivation whenever I feel unmotivated and simply don’t want to practice my standard audition repertoire.",
       "In addition to creating my own opportunities, I also found ways to “spice up” my life -- through scheduling changes. 😂🤣😂🤣 It's like how we vary our practice routines and designate different techniques for specific repertoire. Sometimes we just need to change things up to keep a creative open mind. This is the same approach one can take with scheduling. Changing even just one small element of the schedule can help. I personally have always created strict timeline schedules that were set by the minute for efficiency. That plan worked for three weekends, followed by continuous slumps. I decided to then vary it to a simple checklist of things to do. I found that as much as it helps to have a strict schedule, we humans still like to be in control. Therefore, having a strict schedule set out for you made me feel hints of rebelliousness 😈 Not only that, but whenever I didn’t follow the schedule I set for myself, I would just feel dreadful. When I adjusted to a simple checklist, I had the freedom to designate my time in the moment without feeling locked up in a specific schedule. Of course, at times, having a strict schedule really helps me stay on track. That’s why I’ve been experimenting with switching up my scheduling method every three weeks or so, simply because by the end of three three weeks, I become lazy again and need a new creative twist to my mindset. Performing a piece the same way all the time can get tiring and you lose a sense of freshness. Same with scheduling. Going about one’s day with the same routine at all times especially during a time in which you can’t have too many activities that allow your mind to deter from daily life, causes dark moments with a loss of focus.",
-      "This turned out to be a lot longer than expected 😅, but it’s what I’ve discovered from my experience so far. I’d love to hear how you all have been doing during this time. If you have any insights on this matter, feel free to comment below and share your thoughts. 😊 In the meantime, stay strong and healthy~ 💪🏼",
+      "This turned out to be a lot longer than expected 😅, but it’s what I’ve discovered from my experience so far. I’d love to hear how you all have been doing during this time. If you have any insights on this matter, feel free to reach out and share your thoughts. 😊 In the meantime, stay strong and healthy~ 💪🏼",
     ],
     read_time: "4",
     tags: [
@@ -107,20 +107,38 @@ export const AUTHOR_ABOUT = {
   description: "Pursuing Master of Music at The Juilliard School",
 };
 
+// type: "journal" || "essay" || "article"
 export const ACADEMIA_POSTS = [
   {
+    type: "journal",
     id: "remarkable-journey-eflat-approaching-brahms",
     title:
       "The Remarkable Journey of E-flat: Approaching Brahms’ Op. 120 No. 2 Viola Sonata in Eb Major",
     descr:
       "A look inside Brahms’ Eb sonata through a harmonic and thematic lens.",
-    src: "",
+    src: "/images/05_by-serena/academia/The_Remarkable_Journey_of_E.pdf",
   },
   {
+    type: "journal",
     id: "beethoven-op131-visual-media",
     title: "Beethoven Op. 131 in Visual Media",
     descr:
       "The role of Beethoven’s Op. 131 String Quartet in the film A Late Quartet.",
-    src: "",
+    src: "/images/05_by-serena/academia/Beethoven_Op_131.pdf",
+  },
+];
+
+export const SOCIAL_MEDIA = [
+  {
+    social_media: "Instagram",
+    href: "//instagram.com/sereneserenahsu/",
+    src: "/images/00_template/glyph-logo_May2016.png",
+    alt: "instagram-logo",
+  },
+  {
+    social_media: "YouTube",
+    href: "//youtube.com/channel/UCjkbIVl8RwdgfGxEmZ6qLtA",
+    src: "/images/00_template/yt_icon_mono_light.png",
+    alt: "youtube-logo",
   },
 ];

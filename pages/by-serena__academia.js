@@ -4,6 +4,7 @@ import React from "react";
 import { ACADEMIA_POSTS, AUTHOR_ABOUT } from "../src/database/index";
 // Components
 import Layout from "../src/components/00_template/Layout";
+import BackBtn from "../src/components/00_template/BackBtn";
 // Styles
 import colors from "../styles/theme";
 
@@ -13,15 +14,30 @@ const BySerenaAcademia = () => {
       ACADEMIA_POSTS.map((post) => {
         const title = post.title;
         const descr = post.descr;
+        const src = post.src;
         const author = AUTHOR_ABOUT.name;
+        const type = post.type;
+        const tag = () => {
+          switch (type) {
+            case "journal":
+              return "coral";
+            case "essay":
+              return "blue";
+            case "article":
+              return "magenta";
+          }
+        };
 
         return (
-          <button>
-            <img src="" alt="" />
+          <a href={src} target="_blank" rel="nofollow noopener noreferrer">
+            <span id="marker" />
             <div className="text-container">
               <h2 className="title">{title}</h2>
-              <h2 id="author">{author}</h2>
-              <p>{descr}</p>
+              <div className="text__descr-container">
+                <h2 id="author">{author}</h2>
+                <p>{descr}</p>
+                <span id="tag">{type}</span>
+              </div>
             </div>
             <style jsx>
               {`
@@ -30,55 +46,67 @@ const BySerenaAcademia = () => {
                   text-decoration: underline;
                   font-size: 1rem;
                 }
-                button {
+                #tag {
+                  display: inline-block;
+                  background: ${tag()};
+                  color: white;
+                  padding: 0.3rem 0.5rem;
+                  font-size: 0.65rem;
+                  font-family: Montserrat;
+                  font-weight: 600;
+                  border-radius: 0 14px 14px 0;
+                }
+                a {
                   display: flex;
-                  cursor: pointer;
                   padding: 1rem;
                   background: ${colors.gray.xxl};
                   border: 0;
-                  width: 65rem;
                   margin-bottom: 2rem;
-                  height: 132px;
+                  min-height: 145px;
                   transition: all 0.1s;
                   box-shadow: 3px 3px 8px ${colors.gray.d};
                 }
-                button:hover {
+                a:hover {
                   background: ${colors.gray.l};
                 }
-                button:hover h2 {
+                a:hover h2 {
                   text-decoration: underline;
                 }
-                img {
-                  height: 100px;
-                  width: 100px;
-                  background: pink;
+                .title {
+                  font-size: 1.4rem;
                 }
                 .title,
                 #author {
                   text-align: left;
+                }
+                #author {
                   margin-bottom: 0.5rem;
                 }
                 .text-container {
                   padding-left: 1rem;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  height: 100%;
                 }
                 p {
+                  margin-bottom: 0.5rem;
                 }
               `}
             </style>
-          </button>
+          </a>
         );
       });
 
     return (
       <div className="academia-container">
         {renderArticles()}
+        <BackBtn href="/by-serena" />
         <style jsx>
           {`
             .academia-container {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              padding: 2rem;
+              min-height: 90vh;
+              padding: 3rem 5rem;
             }
           `}
         </style>
