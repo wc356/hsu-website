@@ -1,8 +1,10 @@
+// Libraries
 import React from "react";
-
+// Components
 import Header from "./Header";
 import Navbar from "./Navbar";
-
+import Footer from "./Footer";
+// Styles
 import colors from "../../../styles/theme";
 
 const Layout = (props) => (
@@ -10,6 +12,7 @@ const Layout = (props) => (
     <Header />
     <Navbar />
     <>{props.children}</>
+    <Footer />
     <style jsx global>
       {`
         @import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Lora:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap");

@@ -41,7 +41,7 @@ const Navbar = () => {
       <style jsx>
         {`
           a {
-            color: maroon;
+            color: ${colors.pink.d};
             display: inline-block;
             position: relative;
             transition: all 0.15s;
