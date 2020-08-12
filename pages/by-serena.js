@@ -1,8 +1,9 @@
+// Libraries
 import React from "react";
 import Link from "next/link";
-
+// Components
 import Layout from "../src/components/00_template/Layout";
-
+// Styles
 import colors from "../styles/theme";
 
 const BySerena = () => {
@@ -72,7 +73,11 @@ const BySerena = () => {
           num: "01.",
           title: "Academia",
         })}
-        {renderNavSection({ path: "#", num: "02.", title: "Projects" })}
+        {renderNavSection({
+          path: "/by-serena__projects",
+          num: "02.",
+          title: "Projects",
+        })}
         {renderNavSection({
           path: "/by-serena__blog",
           num: "03.",

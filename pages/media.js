@@ -4,9 +4,7 @@ import React, { Fragment } from "react";
 import Layout from "../src/components/00_template/Layout";
 import VideoList from "../src/components/03_media/VideoList";
 // Database
-import { MEDIA_AUDIOS, MEDOA_AUDIOS } from "../src/database/index";
-// Styles
-import colors from "../styles/theme";
+import { MEDIA_AUDIOS } from "../src/database/index";
 
 const MediaPage = () => {
   function renderMusicPlayer() {
@@ -31,7 +29,7 @@ const MediaPage = () => {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
             grid-template-rows: auto auto auto auto;
-            row-gap: 1rem;
+            row-gap: 2rem;
           }
           Fragment {
             overflow: hidden;
