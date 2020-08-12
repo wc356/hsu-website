@@ -19,12 +19,12 @@ const BySerenaAcademia = () => {
         const type = post.type;
         const tag = () => {
           switch (type) {
-            case "journal":
-              return "coral";
+            case "opinion":
+              return "lightcoral";
             case "essay":
-              return "blue";
+              return "dodgerblue";
             case "article":
-              return "magenta";
+              return "olive";
           }
         };
 

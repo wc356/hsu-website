@@ -4,11 +4,11 @@ import Link from "next/link";
 // Styles
 import colors from "../../../styles/theme";
 
-const BackBtn = ({ href, style, arrStyle }) => (
+const BackBtn = ({ href }) => (
   <Fragment>
     <Link href={href}>
-      <a style={style}>
-        <i id="icon-arrow" style={arrStyle} />
+      <a>
+        <i id="icon-arrow" />
         BACK
       </a>
     </Link>

@@ -111,14 +111,7 @@ const BySerenaBlog = () => {
       <Fragment>
         <div className="blog-landing-container">
           <div className="btn-container">
-            <BackBtn
-              href="/by-serena"
-              style={{ background: "gray", color: "white" }}
-              arrStyle={{
-                "border-bottom": "1px solid #fff",
-                "border-right": "1px solid #fff",
-              }}
-            />
+            <BackBtn href="/by-serena" />
           </div>
           {posts.map((post) => (
             <button key={post.id} onClick={() => handleBtnClick(post.title)}>
@@ -140,7 +133,6 @@ const BySerenaBlog = () => {
               display: flex;
               width: 100vw;
               height: calc(100vh - 6rem);
-              background: #f0f0f0;
             }
             button {
               display: flex;

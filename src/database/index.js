@@ -3,6 +3,9 @@ export const HOME_LANDING_PICTURE = {
   alt: "picuture-with-viola",
 };
 
+export const HOME_ABOUT_DESCR =
+  "Violist __Serena Hsu__ is currently pursuing a master’s degree at __The Juilliard School.__ She has studied at __The Cleveland Institute of Music, the Paris Conservatoire, and the International Musicians Seminar in Prussia Cove, England.__ Her main mentors include Hsin-Yun Huang, Misha Amory, Jean Sulem, Lynne Ramsey, and Jeffrey Irvine. She is a prizewinner of various competitions, including—YoungArts, the Ohio Viola Society Competition, Saint Paul String Quartet Competition, and the OSTA Chamber Music Competition. In addition, she has competed at the __Fischoff National Chamber Music Competition, was a finalist at the American Viola Society Competition, and semi-finalist of the Cecil Aronowitz International Viola Competition in England.__ Serena is an avid chamber musician and dedicated pedagogue.";
+
 export const HOME_GALLERY_PICS = {
   rootDir: "/images/01_home/gallery",
   pics: [
@@ -19,26 +22,53 @@ export const HOME_GALLERY_PICS = {
   ],
 };
 
+export const HOME_CONTACT = {
+  title: "Have any questions?",
+  contact_btn: {
+    email: "serenahsu.viola@gmail.com",
+    text: "Let's Talk!",
+  },
+};
+
 export const MEDIA_FEATURED_VIDEOS = [
   {
-    title: "Hans Sitt Album Leaves",
-    date: "April 20, 2019",
-    description: "Serena Hsu performs the Hans Sitt’s Album Leaves Op. 39.",
-    src: "https://www.youtube.com/embed/5dDrgaH6xvA",
+    title: "Hans Sitt: Album Leaves, Op.39",
+    src: "//youtube.com/embed/WXwhE2RyqQA",
   },
   {
-    title: "Wild Purple",
-    date: "April 20, 2019",
-    description:
-      "Serena Hsu performs Joan Tower’s solo viola work, Wild Purple (1998) in Mixon Hall at the Cleveland Institute of Music. Wild Purple was written for the violist Paul Neubauer. The piece symbolizes the viola’s sound with the color purple and expresses a wild energy.",
-    src: "https://www.youtube.com/embed/RLImgYI7ByM",
+    title: "Joan Tower: Wild Purple",
+    src: "//youtube.com/embed/pfgJhKdaRZA",
   },
   {
-    title: "Bruch Double Concerto",
-    date: "April 20, 2019",
-    description:
-      "Live performance of Max Bruch’s Op. 88 Concerto (1911) for Clarinet, Viola, and Orchestra in E minor (transcribed for violin, viola, and piano) alongside colleagues Rebecca Benjamin (violin) and Natsumi Shibagaki (piano)..",
-    src: "https://www.youtube.com/embed/bG_RucFfvhg",
+    title: "Julius Röntgen: Viola Sonata In C Minor",
+    src: "//youtube.com/embed/c_vNoca5kpU",
+  },
+  {
+    title: "Max Bruch: Double Concerto in E minor, Op.88",
+    src: "//youtube.com/embed/z7JxLLMTY90",
+  },
+];
+
+export const MEDIA_AUDIOS = [
+  {
+    num: 1,
+    name: "Brahms Eb Sonata Op. 120 No. 2 Mvt. I—Serena Hsu, viola",
+    src: "/audio/Brahms_Eb_Sonata_Op120_No2_Mvt-I--Serena_Hsu_viola.mp3",
+  },
+  {
+    num: 2,
+    name: "Brahms Eb Sonata Op. 120 No. 2 Mvt. II—Serena Hsu, viola",
+    src: "/audio/Brahms_Eb_Sonata_Op120_No2_Mvt-II--Serena_Hsu_viola.mp3",
+  },
+  {
+    num: 3,
+    name: "JS Bach Cello Suite No. 6 II. Allemande",
+    src: "/audio/JS_Bach_Cello_Suite_No6_II_Allemande.mp3",
+  },
+  {
+    num: 4,
+    name: "Vieuxtemps Capriccio Op. 55—Serena Hsu, viola",
+    src: "/audio/Vieuxtemps_Capriccio_Op55--Serena_Hsu_viola.mp3",
   },
 ];
 
@@ -107,10 +137,10 @@ export const AUTHOR_ABOUT = {
   description: "Pursuing Master of Music at The Juilliard School",
 };
 
-// type: "journal" || "essay" || "article"
+// type: "opinion" || "essay" || "article"
 export const ACADEMIA_POSTS = [
   {
-    type: "journal",
+    type: "opinion",
     id: "remarkable-journey-eflat-approaching-brahms",
     title:
       "The Remarkable Journey of E-flat: Approaching Brahms’ Op. 120 No. 2 Viola Sonata in Eb Major",
@@ -119,7 +149,7 @@ export const ACADEMIA_POSTS = [
     src: "/images/05_by-serena/academia/The_Remarkable_Journey_of_E.pdf",
   },
   {
-    type: "journal",
+    type: "essay",
     id: "beethoven-op131-visual-media",
     title: "Beethoven Op. 131 in Visual Media",
     descr:
@@ -142,3 +172,25 @@ export const SOCIAL_MEDIA = [
     alt: "youtube-logo",
   },
 ];
+
+export const STUDIO = {
+  page_title: "Studio de Belle sonore",
+  sub_title: "Music Studio for Violin and Viola",
+  body_title: "My Teaching Philosophy",
+  body: [
+    "The ability to tell a story and make a statement through music is one way in which individuals can express their personal opinions. As a professional musician, it is my mission to provide students with knowledge of technical, musical, historical, and expressive elements that will allow them to share their unique ideas with the world. My goal as a teacher is to allow my students to develop an understanding of the history behind each piece that they learn and provide a variety of methods that will allow them to tell their own story. Beginner students will learn practice techniques and exercises that will help them create beautiful sounds that evoke different personalities from their instrument. Advanced students will continue to work on fundamental exercises and experiment with a variety of ways to create different emotions and express different ideas through their playing. My main artistic focus is to enable students to create their own distinctive interpretations.",
+    "Weekly private lessons will be individually tailored based on each students’ interests and goals. I encourage students to explore their own independent musical ideas and be committed to their expressions. As a mentor, I will strengthen my students’ confidence and self-motivation as musicians and as individuals. Lessons will primarily be focused on technique exercises, polishing repertoire, and expanding students’ knowledge. I will cultivate curiosity and support students in accomplishing short-term and long-term goals.",
+    "Through bi-weekly studio classes, all students will be a part of an inspiring session in which they will perform for each other and provide honest and positive feedback. Students in my studio will encourage and motivate each other to become well-rounded musicians. Studio class will also consist of lectures, presentations, and group discussions.",
+    "I strongly advocate for a comprehensive knowledge of analysis and historical knowledge of repertoire that students learn because it allows them to evaluate and understand the music on a deeper level. Knowing the historical context in which a piece was composed and what the composer was going through at that time enables students to understand the music on a personal level with which they can connect. It also encourages them to be creative in their own approach to the music. Additionally, understanding the music theory and analysis of the piece will help students to formulate an educated decision on musical expressions and sound quality they want to create based on the harmonies.",
+    "As an avid chamber musician, I strongly encourage my students to collaborate amongst each other and with our studio pianist through opportunities that arise outside of the studio. Collaborating with other musicians allows students to develop strong listening skills and fosters strong verbal and musical communication skills. Yearly studio recitals provide students with an opportunity to perform solo and collaborative pieces that they have been working on.",
+    "I believe it is my responsibility to cultivate a trusting teacher-student relationship that encourages students to become lifelong learners. The overall goal of my teaching philosophy is to support students throughout their musical journey.",
+  ],
+  img: {
+    src: "/images/IMG_0960.jpg",
+    alt: "black-dress-sitting",
+  },
+  contact_btn: {
+    email: "serenahsu.studio@gmail.com",
+    text: "Contact Me!",
+  },
+};
