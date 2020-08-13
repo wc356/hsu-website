@@ -10,6 +10,7 @@ const Footer = () => {
     <div className="social-container">
       {SOCIAL_MEDIA.map((socMedia) => (
         <a
+          key={socMedia}
           href={socMedia.href}
           target="_blank"
           rel="nofollow noopener noreferrer"

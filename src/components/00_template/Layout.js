@@ -24,7 +24,6 @@ const Layout = (props) => (
         }
         html,
         body {
-          font-family: "Lora", serif;
           height: 100%;
         }
         p {
