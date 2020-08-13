@@ -1,11 +1,7 @@
 // Libraries
-import React, { Fragment } from "react";
-// Database
-import { MEDIA_FEATURED_VIDEOS as videos } from "../../database/index";
-// Styles
-import colors from "../../../styles/theme";
+import React from "react";
 
-const VideoList = () => {
+const VideoList = ({ videos, columns, rows, width, height, justify }) => {
   const renderVideo = (src, title) => (
     <li key={title}>
       <h1>{title}</h1>
@@ -19,6 +15,9 @@ const VideoList = () => {
         {`
           li {
             overflow: hidden;
+            height: ${height};
+            ${justify && "justify-self: center;"}
+            width: ${width};
           }
           h1 {
             font-size: 1.2rem;
@@ -49,11 +48,13 @@ const VideoList = () => {
       <style jsx>
         {`
           .video-grid__container {
-            display: grid;
-            height: 50rem;
+            height: 100%;
             width: 100%;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+
+            // CSS Grid
+            display: grid;
+            grid-template-columns: repeat(${columns}, 1fr);
+            grid-template-rows: repeat(${rows}, 1fr);
             column-gap: 2rem;
             row-gap: 5rem;
           }

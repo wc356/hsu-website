@@ -2,9 +2,9 @@
 import React, { Fragment } from "react";
 // Components
 import Layout from "../src/components/00_template/Layout";
-import VideoList from "../src/components/03_media/VideoList";
+import VideoList from "../src/components/00_template/VideoList";
 // Database
-import { MEDIA_AUDIOS } from "../src/database/index";
+import { MEDIA_FEATURED_VIDEOS, MEDIA_AUDIOS } from "../src/database/index";
 
 const MediaPage = () => {
   function renderMusicPlayer() {
@@ -54,7 +54,12 @@ const MediaPage = () => {
     <Layout>
       <div className="flex-container">
         <h1>Media</h1>
-        <VideoList />
+        <VideoList
+          videos={MEDIA_FEATURED_VIDEOS}
+          columns="3"
+          rows="2"
+          height="20rem"
+        />
         {renderMusicPlayer()}
       </div>
       <style jsx>
