@@ -7,8 +7,8 @@ import ContactBtn from "../src/components/00_template/ContactBtn";
 import { STUDIO } from "../src/database/index";
 
 const StudioPage = () => {
-  const renderStudio = () => {
-    const renderPageTitle = ({ title, subTitle }) => (
+  function renderPageTitle({ title, subTitle }) {
+    return (
       <div className="title-container">
         <h1>{title}</h1>
         <h3>{subTitle}</h3>
@@ -30,8 +30,10 @@ const StudioPage = () => {
         </style>
       </div>
     );
+  }
 
-    const renderImage = (imgObj) => (
+  function renderImage(imgObj) {
+    return (
       <div className="img-container">
         <img src={imgObj.src} alt={imgObj.alt} />
         <style jsx>
@@ -51,8 +53,10 @@ const StudioPage = () => {
         </style>
       </div>
     );
+  }
 
-    const renderBodyTitle = (title) => (
+  function renderBodyTitle(title) {
+    return (
       <Fragment>
         <h3>{title}</h3>
         <style jsx>{`
@@ -63,24 +67,27 @@ const StudioPage = () => {
         `}</style>
       </Fragment>
     );
+  }
 
-    const renderBodyContent = (body) =>
-      body.map((prgph) => (
-        <Fragment>
-          <article>{prgph}</article>
-          <style jsx>
-            {`
-              article {
-                margin: 2rem 0;
-                text-align: justify;
-                line-height: 1.6rem;
-              }
-            `}
-          </style>
-        </Fragment>
-      ));
+  function renderBodyContent(body) {
+    return body.map((prgph) => (
+      <Fragment>
+        <article>{prgph}</article>
+        <style jsx>
+          {`
+            article {
+              margin: 2rem 0;
+              text-align: justify;
+              line-height: 1.6rem;
+            }
+          `}
+        </style>
+      </Fragment>
+    ));
+  }
 
-    return (
+  return (
+    <Layout>
       <div className="studio-container">
         {renderPageTitle({
           title: STUDIO.page_title,
@@ -107,10 +114,8 @@ const StudioPage = () => {
           `}
         </style>
       </div>
-    );
-  };
-
-  return <Layout>{renderStudio()}</Layout>;
+    </Layout>
+  );
 };
 
 export default StudioPage;

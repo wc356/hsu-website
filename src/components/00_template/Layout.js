@@ -4,8 +4,6 @@ import React from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-// Styles
-import colors from "../../../styles/theme";
 
 const Layout = (props) => (
   <div className="layout">

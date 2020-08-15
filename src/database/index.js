@@ -1,6 +1,12 @@
-export const HOME_LANDING_PICTURE = {
+export const HOME_LANDING_PIC = {
   src: "/images/01_home/landing/IMG_0001.jpg",
   alt: "picuture-with-viola",
+};
+
+export const HOME_LANDING_TEXT = {
+  title: "Welcome to My Site",
+  body:
+    "I’m a Violist/Violinist based in NYC with a personal teaching studio and a passion for chamber music collaboration and academia. Feel free to browse through my performances, writing, and projects to learn more.",
 };
 
 export const HOME_ABOUT_DESCR =

@@ -1,34 +1,22 @@
+// Libraries
 import React from "react";
-
+// Database
 import { HOME_GALLERY_PICS } from "../../database/index";
 
 const Gallery = () => {
-  const renderGalleryPics = () => (
-    <div className="image-gallery">
-      {HOME_GALLERY_PICS.pics.map((pic) => (
-        <a
-          key={pic.id}
-          href={`${HOME_GALLERY_PICS.rootDir}/${pic.picName}`}
-          className={`img-${pic.id}`}
-        >
-          <ion-icon size="large" name="scan-outline" />
-        </a>
-      ))}
-      <style jsx>
-        {`
-          .image-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: auto;
-            grid-gap: 1.5rem;
-            grid-template-areas:
-              "img-1 img-1 img-2 img-3"
-              "img-1 img-1 img-4 img-5"
-              "img-6 img-7 img-8 img-5"
-              "img-9 img-7 img-10 img-10";
-          }
-
-          .image-gallery a {
+  function renderGalleryPics(pics) {
+    return (
+      <div className="image-gallery">
+        {pics.pics.map((pic) => (
+          <a
+            key={pic.id}
+            href={`${HOME_GALLERY_PICS.rootDir}/${pic.picName}`}
+            className={`img-${pic.id}`}
+          />
+        ))}
+        <style jsx>
+          {`
+          a {
             width: 100%;
             height: 25rem;
             background-position: center;
@@ -39,36 +27,31 @@ const Gallery = () => {
             align-items: center;
             justify-content: center;
           }
-
-          .image-gallery a ion-icon {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 3rem;
-            position: relative;
-            z-index: 100;
-            padding: 1rem 3rem;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            border-radius: 0.4rem;
-            opacity: 0;
-            transition: opacity 0.5s;
-          }
-
-          .image-gallery a::before {
+          a::before {
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(255, 255, 255, 0.5);
             opacity: 0;
             transition: opacity 0.2s;
           }
-
-          .image-gallery a:hover .icon,
-          .image-gallery a:hover::before {
+          a:hover::before {
             opacity: 1;
           }
-
+          .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 1.5rem;
+            grid-template-areas:
+              "img-1 img-1 img-2 img-3"
+              "img-1 img-1 img-4 img-5"
+              "img-6 img-7 img-8 img-5"
+              "img-9 img-9 img-10 img-10";
+          }
           .img-1 {
             grid-area: img-1;
             min-height: 51.5rem;
@@ -97,7 +80,6 @@ const Gallery = () => {
           }
           .img-7 {
             grid-area: img-7;
-            min-height: 51.5rem;
             background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0007.jpg");
           }
           .img-8 {
@@ -112,19 +94,19 @@ const Gallery = () => {
             grid-area: img-10;
             background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0010.jpg");
           }
-
           @media screen and (max-width: 900px) {
             .image-gallery {
             }
           }
         `}
-      </style>
-    </div>
-  );
+        </style>
+      </div>
+    );
+  }
 
   return (
     <section className="gallery-container">
-      {renderGalleryPics()}
+      {renderGalleryPics(HOME_GALLERY_PICS)}
       <style jsx>
         {`
           .gallery-container {
