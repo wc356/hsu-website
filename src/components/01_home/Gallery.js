@@ -1,6 +1,4 @@
-// Libraries
 import React from "react";
-// Database
 import { HOME_GALLERY_PICS } from "../../database/index";
 
 const Gallery = () => {
@@ -16,6 +14,17 @@ const Gallery = () => {
         ))}
         <style jsx>
           {`
+          .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 1.5rem;
+            grid-template-areas:
+              "img-1 img-1 img-2 img-3"
+              "img-1 img-1 img-4 img-5"
+              "img-6 img-7 img-8 img-5"
+              "img-9 img-9 img-10 img-10";
+          }
           a {
             width: 100%;
             height: 25rem;
@@ -40,17 +49,6 @@ const Gallery = () => {
           }
           a:hover::before {
             opacity: 1;
-          }
-          .image-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: auto;
-            grid-gap: 1.5rem;
-            grid-template-areas:
-              "img-1 img-1 img-2 img-3"
-              "img-1 img-1 img-4 img-5"
-              "img-6 img-7 img-8 img-5"
-              "img-9 img-9 img-10 img-10";
           }
           .img-1 {
             grid-area: img-1;
@@ -94,8 +92,24 @@ const Gallery = () => {
             grid-area: img-10;
             background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0010.jpg");
           }
-          @media screen and (max-width: 900px) {
+          @media only screen and (max-width: 280px) {
             .image-gallery {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto;
+              grid-gap: 0;
+              grid-template-areas:
+              "img-1 img-2" 
+              "img-3 img-4"
+              "img-5 img-6"
+              "img-7 img-8"
+              "img-9 img-10"
+            }
+            .img-1 {
+              min-height: 0;
+              border: 1px solid black;
+            }
+            .img-5 {
+              min-height: 0;
             }
           }
         `}
@@ -114,6 +128,12 @@ const Gallery = () => {
             max-width: 120rem;
             margin: auto;
             padding: 10rem;
+          }
+          @media only screen and (max-width: 280px) {
+            .gallery-container {
+              margin: 0;
+              padding: 0;
+            }
           }
         `}
       </style>

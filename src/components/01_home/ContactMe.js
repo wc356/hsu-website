@@ -1,10 +1,7 @@
-// Libraries
 import React from "react";
-// Components
 import ContactBtn from "../00_template/ContactBtn";
-// Database
 import { HOME_CONTACT } from "../../database/index";
-// Styles
+
 import colors from "../../../styles/theme";
 
 const ContactMe = () => {
@@ -25,6 +22,12 @@ const ContactMe = () => {
               font-size: 2rem;
               font-weight: 500;
               margin-bottom: 2rem;
+            }
+            @media only screen and (max-width: 280px) {
+              h1 {
+                text-align: center;
+                font-size: 1.35rem;
+              }
             }
           `}
         </style>

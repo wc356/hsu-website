@@ -1,91 +1,100 @@
-// Libraries
 import React, { Fragment, useState } from "react";
-// Components
 import Link from "next/link";
-// Styles
 import colors from "../../../styles/theme";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
 
-  const renderLogo = (path, logo) => (
-    <Fragment>
-      <Link href={path}>
-        <a>{logo}</a>
-      </Link>
-      <style jsx>
-        {`
-          a {
-            font-family: Dallastown;
-            white-space: nowrap;
-            padding: 1rem;
-            font-size: 3.75rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            transition: all 0.15s;
-            color: ${colors.gray.xxd};
-          }
-          a:hover {
-            opacity: 0.5;
-          }
-        `}
-      </style>
-    </Fragment>
-  );
+  function renderLogo(path, logo) {
+    return (
+      <Fragment>
+        <Link href={path}>
+          <a>{logo}</a>
+        </Link>
+        <style jsx>
+          {`
+            a {
+              font-family: Dallastown;
+              white-space: nowrap;
+              padding: 1rem;
+              font-size: 3.75rem;
+              font-weight: 600;
+              letter-spacing: 2px;
+              transition: all 0.15s;
+              color: ${colors.gray.xxd};
+            }
+            a:hover {
+              opacity: 0.5;
+            }
+            @media only screen and (max-width: 280px) {
+              a {
+                font-size: 2rem;
+                padding-left: 1.5rem;
+              }
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+  }
 
-  const renderNavLink = (path, title) => (
-    <li>
-      <Link href={path}>
-        <a>{title}</a>
-      </Link>
-      <style jsx>
-        {`
-          a {
-            color: ${colors.pink.d};
-            display: inline-block;
-            position: relative;
-            transition: all 0.15s;
-            font-size: 1.2rem;
-            padding: 0.5rem;
-            font-weight: 500;
-            white-space: nowrap;
-          }
-          a:hover {
-            transform: translateY(-2px);
-            color: gray;
-          }
-        `}
-      </style>
-    </li>
-  );
+  function renderNavLink(path, title) {
+    return (
+      <li>
+        <Link href={path}>
+          <a>{title}</a>
+        </Link>
+        <style jsx>
+          {`
+            a {
+              color: ${colors.pink.d};
+              display: inline-block;
+              position: relative;
+              transition: all 0.15s;
+              font-size: 1.2rem;
+              padding: 0.5rem;
+              font-weight: 500;
+              white-space: nowrap;
+            }
+            a:hover {
+              transform: translateY(-2px);
+              color: gray;
+            }
+          `}
+        </style>
+      </li>
+    );
+  }
 
-  const renderNavBurger = () => (
-    <Fragment>
-      <div className="line1" />
-      <div className="line2" />
-      <div className="line3" />
-      <style jsx>
-        {`
-          div {
-            width: 25px;
-            height: 2px;
-            margin: 5px;
-            background-color: brown;
-            transition: all 0.25s;
-          }
-          .line1 {
-            transform: ${navActive && `rotate(-45deg) translate(-4px, 6px)`};
-          }
-          .line2 {
-            opacity: ${navActive && `0`};
-          }
-          .line3 {
-            transform: ${navActive && `rotate(45deg) translate(-4px, -6px)`};
-          }
-        `}
-      </style>
-    </Fragment>
-  );
+  function renderNavBurger() {
+    return (
+      <Fragment>
+        <div className="line1" />
+        <div className="line2" />
+        <div className="line3" />
+        <style jsx>
+          {`
+            div {
+              width: 25px;
+              height: 2px;
+              margin: 5px;
+              background-color: brown;
+              transition: all 0.25s;
+            }
+            .line1 {
+              transform: ${navActive && `rotate(-45deg) translate(-4px, 6px)`};
+            }
+            .line2 {
+              opacity: ${navActive && `0`};
+            }
+            .line3 {
+              transform: ${navActive && `rotate(45deg) translate(-4px, -6px)`};
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+  }
 
   return (
     <section className="navbar">
@@ -116,7 +125,7 @@ const Navbar = () => {
             align-items: center;
             box-shadow: 2px 2px 7px rgba(97, 97, 97, 0.2);
           }
-          .navbar .logo {
+          .logo {
             margin: 0 45px;
           }
           .navitems-wrapper {
@@ -125,7 +134,7 @@ const Navbar = () => {
             justify-content: flex-end;
             width: 100%;
           }
-          .navbar .navitems {
+          .navitems {
             display: flex;
             justify-content: space-around;
             width: 60%;
@@ -134,6 +143,11 @@ const Navbar = () => {
           .burger {
             display: none;
             margin-right: 1.5rem;
+          }
+          @media only screen and (max-width: 280px) {
+            .logo {
+              margin: 0;
+            }
           }
           @media screen and (max-width: 1400px) {
             .navbar .navitems {
@@ -144,10 +158,10 @@ const Navbar = () => {
             body {
               overflow-x: hidden;
             }
-            .navbar .logo {
+            .logo {
               margin: 0;
             }
-            .navbar .navitems {
+            .navitems {
               position: fixed;
               margin-right: 0;
               right: 0;

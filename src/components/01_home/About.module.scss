@@ -18,3 +18,8 @@
     line-height: 2;
   }
 }
+@media only screen and (max-width: 280px) {
+  .markdown {
+    font-size: 0.75rem;
+  }
+}

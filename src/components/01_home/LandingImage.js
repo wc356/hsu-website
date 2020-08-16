@@ -1,18 +1,17 @@
-// Libraries
-import React from "react";
-// Database
-import { HOME_LANDING_PIC, HOME_LANDING_TEXT } from "../../database/index";
-// Styles
+import React, { Fragment } from "react";
+import { HOME_PAGE } from "../../database/index";
 import colors from "../../../styles/theme";
 
 const LandingImage = () => {
   const arrowStyle = `5px solid ${colors.black.l}`;
+  const backImg = HOME_PAGE.pic.src;
+  const landingTxt = HOME_PAGE.text;
 
-  function renderLandingText(text) {
+  function renderLandingText(txt) {
     return (
       <div className="text-container">
-        <h1>{text.title}</h1>
-        <h2>{text.body}</h2>
+        <h1>{txt.title}</h1>
+        <h2>{txt.body}</h2>
         <style jsx>
           {`
             .text-container {
@@ -30,11 +29,30 @@ const LandingImage = () => {
               font-size: 7rem;
               line-height: 5rem;
               font-family: Dallastown;
+              // text-shadow: 5px 5px #fff;
+              text-shadow: 7px 7px 2px ${colors.pink.l};
             }
             h2 {
               font-family: Montserrat;
               font-size: 1.2rem;
               font-weight: 500;
+            }
+            @media only screen and (max-width: 280px) {
+              .text-container {
+                width: 100%;
+                line-height 2rem;
+                padding: 1rem;
+                margin-top: 9rem;
+              }
+              h1 {
+                font-size: 2.5rem;
+                margin-bottom: .2rem;
+                padding-left: 0;
+                text-align: center;
+              }
+              h2 {
+                font-size: 0.6rem;
+              }
             }
           `}
         </style>
@@ -76,6 +94,12 @@ const LandingImage = () => {
                 transform: rotate(45deg) translate(2.2rem, 2.2rem);
               }
             }
+            @media only screen and (max-width: 280px) {
+              span {
+                height: 30px;
+                width: 30px;
+              }
+            }
           `}
         </style>
       </div>
@@ -83,11 +107,9 @@ const LandingImage = () => {
   }
 
   return (
-    <>
+    <Fragment>
       <div className="img-wrapper">
-        <div className="landing-picture">
-          {renderLandingText(HOME_LANDING_TEXT)}
-        </div>
+        <div className="landing-pic">{renderLandingText(landingTxt)}</div>
         {renderArrow()}
       </div>
       <style jsx>
@@ -97,17 +119,24 @@ const LandingImage = () => {
             overflow: hidden;
             text-align: center;
           }
-          .landing-picture {
+          .landing-pic {
             height: 100%;
-            background-image: url(${HOME_LANDING_PIC.src});
+            background-image: url(${backImg});
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
+            box-shadow: inset 0 0 30px #fff;
+          }
+          @media only screen and (max-width: 280px) {
+            .landing-pic {
+              background-position: 0% 20%;
+              background-size: 100%;
+            }
           }
         `}
       </style>
-    </>
+    </Fragment>
   );
 };
 

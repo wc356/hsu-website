@@ -1,80 +1,89 @@
-// Libraries
 import React, { Fragment } from "react";
-// Styles
 import colors from "../../../styles/theme";
 
 const ConcertsSchedule = () => {
-  const renderTitle = (title) => (
-    <Fragment>
-      <h1>{title}</h1>
-      <style jsx>
-        {`
-          h1 {
-            margin-bottom: 3rem;
-            font-weight: 400;
-            font-size: 2.5rem;
-          }
-        `}
-      </style>
-    </Fragment>
-  );
+  function renderSchedTitle(title) {
+    return (
+      <Fragment>
+        <h1>{title}</h1>
+        <style jsx>
+          {`
+            h1 {
+              margin-bottom: 3rem;
+              font-weight: 400;
+              font-size: 2.5rem;
+              text-align: center;
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+  }
 
-  const renderHeader = (header) => (
-    <Fragment>
-      <li className="header">{header}</li>
-      <style jsx>
-        {`
-          .header {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: brown;
-          }
-          li {
-            padding: 0.5rem;
-            width: 100%;
-            text-align: center;
-            height: 100%;
-          }
-        `}
-      </style>
-    </Fragment>
-  );
+  function renderSchedHeaders({ head1, head2, head3, head4, head5 }) {
+    return (
+      <Fragment>
+        <li>{head1}</li>
+        <li>{head2}</li>
+        <li>{head3}</li>
+        <li>{head4}</li>
+        <li>{head5}</li>
+        <style jsx>
+          {`
+            li {
+              font-size: 1.3rem;
+              font-weight: 600;
+              color: ${colors.pink.d};
+              padding: 0.5rem;
+              width: 100%;
+              text-align: center;
+              height: 100%;
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+  }
 
-  const renderConcertDetails = ({
+  function renderConcertDetails({
     date,
     location,
     venue,
     repertoire,
     ticket_price,
-  }) => (
-    <Fragment>
-      <li>{date}</li>
-      <li>{location}</li>
-      <li>{venue}</li>
-      <li>{repertoire}</li>
-      <li>{ticket_price}</li>
-      <style jsx>
-        {`
-          li {
-            padding: 0.5rem;
-            width: 100%;
-            text-align: center;
-            height: 100%;
-          }
-        `}
-      </style>
-    </Fragment>
-  );
+  }) {
+    return (
+      <Fragment>
+        <li>{date}</li>
+        <li>{location}</li>
+        <li>{venue}</li>
+        <li>{repertoire}</li>
+        <li>{ticket_price}</li>
+        <style jsx>
+          {`
+            li {
+              padding: 0.5rem;
+              width: 100%;
+              text-align: center;
+              height: 100%;
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+  }
 
   return (
     <section className="concerts">
-      {renderTitle("Upcoming Concerts")}
+      {renderSchedTitle("Upcoming Concerts")}
       <ul className="concerts-grid">
-        {renderHeader("Date")}
-        {renderHeader("Location")}
-        {renderHeader("Venue")}
-        {renderHeader("Repertoire & Colleagues")}
-        {renderHeader("Tickets")}
+        {renderSchedHeaders({
+          head1: "Date",
+          head2: "Location",
+          head3: "Venue",
+          head4: "Repertoire & Colleagues",
+          head5: "Tickets",
+        })}
         {renderConcertDetails({
           date: "-",
           location: "-",
@@ -106,6 +115,16 @@ const ConcertsSchedule = () => {
               "item-1 item-2 item-3 item-4 item-5"
               "item-1 item-2 item-3 item-4 item-5"
               "item-1 item-2 item-3 item-4 item-5"
+          }
+          @media only screen and (max-width: 280px) {
+            .concerts {
+              transform: scale(.55);
+            }
+            .concerts-grid {
+              padding: .5rem;
+              column-gap: 0;
+              row-gap: 0;
+            }
           }
         `}
       </style>

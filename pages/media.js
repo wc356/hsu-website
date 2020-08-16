@@ -1,22 +1,72 @@
-// Libraries
 import React, { Fragment } from "react";
-// Components
 import Layout from "../src/components/00_template/Layout";
 import VideoList from "../src/components/00_template/VideoList";
-// Database
-import { MEDIA_FEATURED_VIDEOS, MEDIA_AUDIOS } from "../src/database/index";
+import { MEDIA_PAGE } from "../src/database/index";
 
 const MediaPage = () => {
-  function renderMusicPlayer() {
+  const title = MEDIA_PAGE.title;
+  const videos = MEDIA_PAGE.videos;
+  const audios = MEDIA_PAGE.audios;
+
+  function renderTitle(title) {
+    return (
+      <Fragment>
+        <h1>{title}</h1>
+        <style jsx>
+          {`
+            h1 {
+              text-align: center;
+              font-weight: 400;
+              font-size: 3rem;
+              margin-bottom: 5rem;
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+  }
+
+  function renderMusicPlayer(audios) {
+    const renderAudioTitle = (mp3) => (
+      <Fragment>
+        <p>{`${mp3.num}. ${mp3.name}`}</p>
+        <style jsx>
+          {`
+            p {
+              margin-left: 1rem;
+              font-weight: 600;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              align-self: center;
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+
+    const renderAudioCtrl = (mp3) => (
+      <Fragment>
+        <audio controls>
+          <source src={mp3.src} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <style jsx>
+          {`
+            audio {
+              width: 100%;
+            }
+          `}
+        </style>
+      </Fragment>
+    );
+
     return (
       <div className="mp3-player__container">
-        {MEDIA_AUDIOS.map((mp3) => (
-          <Fragment>
-            <p>{`${mp3.num}. ${mp3.name}`}</p>
-            <audio controls>
-              <source src={mp3.src} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
+        {audios.map((mp3, i) => (
+          <Fragment key={i}>
+            {renderAudioTitle(mp3)}
+            {renderAudioCtrl(mp3)}
           </Fragment>
         ))}
         <style jsx>{`
@@ -34,17 +84,6 @@ const MediaPage = () => {
           Fragment {
             overflow: hidden;
           }
-          p {
-            margin-left: 1rem;
-            font-weight: 600;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            align-self: center;
-          }
-          audio {
-            width: 100%;
-          }
         `}</style>
       </div>
     );
@@ -53,25 +92,14 @@ const MediaPage = () => {
   return (
     <Layout>
       <div className="flex-container">
-        <h1>Media</h1>
-        <VideoList
-          videos={MEDIA_FEATURED_VIDEOS}
-          columns="3"
-          rows="2"
-          height="20rem"
-        />
-        {renderMusicPlayer()}
+        {renderTitle(title)}
+        <VideoList videos={videos} columns="3" rows="2" height="20rem" />
+        {renderMusicPlayer(audios)}
       </div>
       <style jsx>
         {`
           .flex-container {
             padding: 4rem 2rem;
-          }
-          h1 {
-            text-align: center;
-            font-weight: 400;
-            font-size: 3rem;
-            margin-bottom: 5rem;
           }
         `}
       </style>

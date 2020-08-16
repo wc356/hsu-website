@@ -1,34 +1,68 @@
 import React from "react";
-
 import Layout from "../src/components/00_template/Layout";
-import AboutBio from "../src/components/02_about/AboutBio";
-import ImageProfile from "../src/components/02_about/ImageProfile";
+import { ABOUT_PAGE } from "../src/database/index";
 
-const AboutPage = () => (
-  <Layout>
-    <div className="container">
-      <AboutBio />
-      <ImageProfile />
-    </div>
+const AboutPage = () => {
+  function renderAboutText(text) {
+    return (
+      <ul>
+        {text.map((txt, i) => (
+          <article key={i}>{txt}</article>
+        ))}
+        <style jsx>
+          {`
+            ul {
+              padding: 0 4rem;
+            }
+            article {
+              margin: 2rem 0;
+              font-size: 1rem;
+              line-height: 2rem;
+              text-align: justify;
+              text-justify: inter-word;
+            }
+          `}
+        </style>
+      </ul>
+    );
+  }
 
-    <style jsx>
-      {`
-        .container {
-          display: flex;
-          height: 92vh;
-        }
+  function renderAboutPic(pic) {
+    return (
+      <div className="image-container">
+        <img src={pic.src} alt={pic.alt} />
+        <style jsx>
+          {`
+            .image-container {
+              align-self: center;
+            }
+            img {
+              width: 100%;
+            }
+          `}
+        </style>
+      </div>
+    );
+  }
 
-        @media screen and (max-width: 1400px) {
-          .container {
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            width: 100vw;
+  return (
+    <Layout>
+      <div className="about-container">
+        {renderAboutText(ABOUT_PAGE.text)}
+        {renderAboutPic(ABOUT_PAGE.pic)}
+      </div>
+      <style jsx>
+        {`
+          .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            min-height: 90vh;
           }
-        }
-      `}
-    </style>
-  </Layout>
-);
+        `}
+      </style>
+    </Layout>
+  );
+};
 
 export default AboutPage;

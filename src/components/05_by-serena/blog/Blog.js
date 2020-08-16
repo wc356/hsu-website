@@ -8,7 +8,7 @@ import colors from "../../../../styles/theme";
 const Blog = ({ title, setState }) => {
   const post = BLOG_POSTS.find((post) => post.title === title);
 
-  const renderImg = (pic) => {
+  function renderImg(pic) {
     const PIC_PATH = `/images/05_by-serena/blog/${pic}`;
     return (
       <div className="img-container">
@@ -32,59 +32,63 @@ const Blog = ({ title, setState }) => {
         </style>
       </div>
     );
-  };
+  }
 
-  const renderTitle = (title) => (
-    <div className="title-container">
-      <h1>{title}</h1>
-      <hr />
-      <style jsx>
-        {`
-          .title-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-          h1 {
-            font-family: "Baskervville", serif;
-            font-size: 2.5rem;
-            font-weight: 400;
-          }
-          hr {
-            height: 1px;
-            border-width: 0;
-            background: ${colors.gray.xd};
-            width: 90px;
-            margin-top: 2rem;
-          }
-        `}
-      </style>
-    </div>
-  );
+  function renderTitle(title) {
+    return (
+      <div className="title-container">
+        <h1>{title}</h1>
+        <hr />
+        <style jsx>
+          {`
+            .title-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+            h1 {
+              font-family: "Baskervville", serif;
+              font-size: 2.5rem;
+              font-weight: 400;
+            }
+            hr {
+              height: 1px;
+              border-width: 0;
+              background: ${colors.gray.xd};
+              width: 90px;
+              margin-top: 2rem;
+            }
+          `}
+        </style>
+      </div>
+    );
+  }
 
-  const renderReadTime = (readTime) => (
-    <p>
-      <i>
-        <ion-icon name="alarm-outline" />
-      </i>{" "}
-      <span>{`${readTime} Minute read`}</span>
-      <style jsx>
-        {`
-          p {
-            font-family: Montserrat;
-            text-align: center;
-            color: ${colors.gray.xd};
-          }
-          i {
-            display: inline-block;
-            vertical-align: middle;
-          }
-        `}
-      </style>
-    </p>
-  );
+  function renderReadTime(readTime) {
+    return (
+      <p>
+        <i>
+          <ion-icon name="alarm-outline" />
+        </i>{" "}
+        <span>{`${readTime} Minute read`}</span>
+        <style jsx>
+          {`
+            p {
+              font-family: Montserrat;
+              text-align: center;
+              color: ${colors.gray.xd};
+            }
+            i {
+              display: inline-block;
+              vertical-align: middle;
+            }
+          `}
+        </style>
+      </p>
+    );
+  }
 
-  const renderAuthorSocial = (date) => {
+  function renderAuthorSocial(date) {
     const renderShareLinks = () => (
       <p>
         <span>share</span> F | P | T
@@ -98,6 +102,7 @@ const Blog = ({ title, setState }) => {
         </style>
       </p>
     );
+
     return (
       <div className="profile-container">
         <div className="profile">
@@ -150,58 +155,60 @@ const Blog = ({ title, setState }) => {
         </style>
       </div>
     );
-  };
+  }
 
-  const renderBody = (textArray) => (
-    <section className="content">
-      {textArray.map((text) => (
-        <article>
-          <p>{text}</p>
-        </article>
-      ))}
-      <button onClick={() => setState("BLOG_HOME")}>
-        <i id="icon-arrow" />
-        BACK
-      </button>
-      <style jsx>
-        {`
-          .content {
-            padding: 1rem 0;
-          }
-          .content article {
-            padding: 1rem 0;
-            line-height: 1.75;
-            color: ${colors.black.l};
-          }
-          button {
-            margin-top: 1rem;
-            padding: 0.75rem;
-            cursor: pointer;
-            border: 0;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            background: ${colors.gray.l};
-            transition: all 0.15s;
-          }
-          button #icon-arrow {
-            content: "";
-            width: 10px;
-            height: 10px;
-            border-bottom: 1px solid black;
-            border-right: 1px solid black;
-            transform: rotate(135deg);
-            margin-right: 8px;
-          }
-          button:hover {
-            background: lightgray;
-          }
-        `}
-      </style>
-    </section>
-  );
+  function renderBody(textArray) {
+    return (
+      <section className="content">
+        {textArray.map((text, i) => (
+          <article key={i}>
+            <p>{text}</p>
+          </article>
+        ))}
+        <button onClick={() => setState("BLOG_HOME")}>
+          <i id="icon-arrow" />
+          BACK
+        </button>
+        <style jsx>
+          {`
+            .content {
+              padding: 1rem 0;
+            }
+            .content article {
+              padding: 1rem 0;
+              line-height: 1.75;
+              color: ${colors.black.l};
+            }
+            button {
+              margin-top: 1rem;
+              padding: 0.75rem;
+              cursor: pointer;
+              border: 0;
+              letter-spacing: 1px;
+              display: flex;
+              align-items: center;
+              background: ${colors.gray.l};
+              transition: all 0.15s;
+            }
+            button #icon-arrow {
+              content: "";
+              width: 10px;
+              height: 10px;
+              border-bottom: 1px solid black;
+              border-right: 1px solid black;
+              transform: rotate(135deg);
+              margin-right: 8px;
+            }
+            button:hover {
+              background: lightgray;
+            }
+          `}
+        </style>
+      </section>
+    );
+  }
 
-  const renderFooter = (tags) => {
+  function renderFooter(tags) {
     const renderTags = (tags) => (
       <>
         <h1>Tags:</h1>
@@ -257,9 +264,9 @@ const Blog = ({ title, setState }) => {
         </style>
       </section>
     );
-  };
+  }
 
-  const renderFooterNavbar = (authorDesc) => {
+  function renderFooterNavbar(authorDesc) {
     const renderAuthorPic = () => (
       <section className="author-pic">
         <img src="/images/IMG_0878.jpg" alt="#" />
@@ -322,7 +329,7 @@ const Blog = ({ title, setState }) => {
         </style>
       </section>
     );
-  };
+  }
 
   return (
     <>

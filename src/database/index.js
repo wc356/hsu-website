@@ -1,3 +1,46 @@
+export const AUTHOR_ABOUT = {
+  name: "Serena Hsu",
+  location: "New York, NY",
+  description: "Pursuing Master of Music at The Juilliard School",
+};
+
+// HOME PAGE
+export const HOME_PAGE = {
+  pic: {
+    src: "/images/01_home/landing/IMG_0001.jpg",
+    alt: "picuture-with-viola",
+  },
+  text: {
+    title: "Welcome to My Site",
+    body:
+      "I’m a Violist/Violinist based in NYC with a personal teaching studio and a passion for chamber music collaboration and academia. Feel free to browse through my performances, writing, and projects to learn more.",
+  },
+  about:
+    "Violist __Serena Hsu__ is currently pursuing a master’s degree at __The Juilliard School.__ She has studied at __The Cleveland Institute of Music, the Paris Conservatoire, and the International Musicians Seminar in Prussia Cove, England.__ Her main mentors include Hsin-Yun Huang, Misha Amory, Jean Sulem, Lynne Ramsey, and Jeffrey Irvine. She is a prizewinner of various competitions, including—YoungArts, the Ohio Viola Society Competition, Saint Paul String Quartet Competition, and the OSTA Chamber Music Competition. In addition, she has competed at the __Fischoff National Chamber Music Competition, was a finalist at the American Viola Society Competition, and semi-finalist of the Cecil Aronowitz International Viola Competition in England.__ Serena is an avid chamber musician and dedicated pedagogue.",
+  gallery: {
+    rootDir: "/images/01_home/gallery",
+    pics: [
+      { id: 1, picName: "IMG_0001.jpg" },
+      { id: 2, picName: "IMG_0002.jpg" },
+      { id: 3, picName: "IMG_0003.jpg" },
+      { id: 4, picName: "IMG_0004.jpg" },
+      { id: 5, picName: "IMG_0005.jpg" },
+      { id: 6, picName: "IMG_0006.jpg" },
+      { id: 7, picName: "IMG_0007.jpg" },
+      { id: 8, picName: "IMG_0008.jpg" },
+      { id: 9, picName: "IMG_0009.jpg" },
+      { id: 10, picName: "IMG_0010.jpg" },
+    ],
+  },
+  contact: {
+    title: "Have any questions?",
+    contact_btn: {
+      email: "serenahsu.viola@gmail.com",
+      text: "Let's Talk!",
+    },
+  },
+};
+
 export const HOME_LANDING_PIC = {
   src: "/images/01_home/landing/IMG_0001.jpg",
   alt: "picuture-with-viola",
@@ -36,47 +79,63 @@ export const HOME_CONTACT = {
   },
 };
 
-export const MEDIA_FEATURED_VIDEOS = [
-  {
-    title: "Hans Sitt: Album Leaves, Op.39",
-    src: "//youtube.com/embed/WXwhE2RyqQA",
+// ABOUT PAGE
+export const ABOUT_PAGE = {
+  text: [
+    "Violist Serena Hsu is currently pursuing a master’s degree at The Juilliard School. She has studied at The Cleveland Institute of Music, the Paris Conservatoire, and the International Musicians Seminar in Prussia Cove, England. Her main mentors include Hsin-Yun Huang, Misha Amory, Jean Sulem, Lynne Ramsey, and Jeffrey Irvine. She is a prizewinner of various competitions, including YoungArts, the Ohio Viola Society Competition, Saint Paul String Quartet Competition, and the OSTA Chamber Music Competition. Additionally, she has competed at the Fischoff National Chamber Music Competition, was a finalist at the American Viola Society Competition, and semi-finalist of the Cecil Aronowitz International Viola Competition in England.",
+    "She has performed at venues both in the United States and abroad, including Severance Hall, the Kennedy Center, Wiener Konzerthaus, Château de Fontainebleau, Alice Tully Hall, Southern Theatre, among others. She has appeared on Cleveland’s WRUW, North Carolina’s WDAV, and NPR’s “From the Top.” She has performed in master classes for Roberto Díaz, Barbara Westphal, Bruno Pasquier, François Salque, Quatuor Ébène, Lars Anders Tomter, among others.",
+    "An avid chamber musician, Serena has participated in the Intensive Quartet Seminar at CIM, and has attended the McGill International String Quartet Academy, studying with the Alban Berg and Borodin Quartet. As a member of The Belka Quartet, she served as the CIM Apprentice Quartet, holding a Young Artist Residency with the Cleveland Chamber Music Society for the 2017-18 season. Serena has also served as Principal Violist of the CIM Orchestra and was featured on a Chamber Music Series Faculty Concert. As an avid chamber musician, she has attended various fellowship and intensive programs, including Kneisel Hall Chamber Music, Fontainebleau School, the Summer Music Institute Young Artists Program, Music@Menlo Chamber Music Institute, Heifetz International Music Institute, and Bowdoin International Music Festival. Besides performing, Serena loves to read and cook.",
+  ],
+  pic: {
+    src: "/images/IMG_1133.jpg",
+    alt: "holding-viola",
   },
-  {
-    title: "Joan Tower: Wild Purple",
-    src: "//youtube.com/embed/pfgJhKdaRZA",
-  },
-  {
-    title: "Julius Röntgen: Viola Sonata In C Minor",
-    src: "//youtube.com/embed/c_vNoca5kpU",
-  },
-  {
-    title: "Max Bruch: Double Concerto in E minor, Op.88",
-    src: "//youtube.com/embed/z7JxLLMTY90",
-  },
-];
+};
 
-export const MEDIA_AUDIOS = [
-  {
-    num: 1,
-    name: "Brahms Eb Sonata Op. 120 No. 2 Mvt. I—Serena Hsu, viola",
-    src: "/audio/Brahms_Eb_Sonata_Op120_No2_Mvt-I--Serena_Hsu_viola.mp3",
-  },
-  {
-    num: 2,
-    name: "Brahms Eb Sonata Op. 120 No. 2 Mvt. II—Serena Hsu, viola",
-    src: "/audio/Brahms_Eb_Sonata_Op120_No2_Mvt-II--Serena_Hsu_viola.mp3",
-  },
-  {
-    num: 3,
-    name: "JS Bach Cello Suite No. 6 II. Allemande",
-    src: "/audio/JS_Bach_Cello_Suite_No6_II_Allemande.mp3",
-  },
-  {
-    num: 4,
-    name: "Vieuxtemps Capriccio Op. 55—Serena Hsu, viola",
-    src: "/audio/Vieuxtemps_Capriccio_Op55--Serena_Hsu_viola.mp3",
-  },
-];
+// MEDIA PAGE
+export const MEDIA_PAGE = {
+  title: "Media",
+  videos: [
+    {
+      title: "Hans Sitt: Album Leaves, Op.39",
+      src: "//youtube.com/embed/WXwhE2RyqQA",
+    },
+    {
+      title: "Joan Tower: Wild Purple",
+      src: "//youtube.com/embed/pfgJhKdaRZA",
+    },
+    {
+      title: "Julius Röntgen: Viola Sonata In C Minor",
+      src: "//youtube.com/embed/c_vNoca5kpU",
+    },
+    {
+      title: "Max Bruch: Double Concerto in E minor, Op.88",
+      src: "//youtube.com/embed/z7JxLLMTY90",
+    },
+  ],
+  audios: [
+    {
+      num: 1,
+      name: "Brahms Eb Sonata Op. 120 No. 2 Mvt. I—Serena Hsu, viola",
+      src: "/audio/Brahms_Eb_Sonata_Op120_No2_Mvt-I--Serena_Hsu_viola.mp3",
+    },
+    {
+      num: 2,
+      name: "Brahms Eb Sonata Op. 120 No. 2 Mvt. II—Serena Hsu, viola",
+      src: "/audio/Brahms_Eb_Sonata_Op120_No2_Mvt-II--Serena_Hsu_viola.mp3",
+    },
+    {
+      num: 3,
+      name: "JS Bach Cello Suite No. 6 II. Allemande",
+      src: "/audio/JS_Bach_Cello_Suite_No6_II_Allemande.mp3",
+    },
+    {
+      num: 4,
+      name: "Vieuxtemps Capriccio Op. 55—Serena Hsu, viola",
+      src: "/audio/Vieuxtemps_Capriccio_Op55--Serena_Hsu_viola.mp3",
+    },
+  ],
+};
 
 // read_time: 265 WPM for avg adult
 export const BLOG_POSTS = [
@@ -137,12 +196,6 @@ export const BLOG_POSTS = [
   },
 ];
 
-export const AUTHOR_ABOUT = {
-  name: "Serena Hsu",
-  location: "New York, NY",
-  description: "Pursuing Master of Music at The Juilliard School",
-};
-
 // type: "opinion" || "essay" || "article"
 export const ACADEMIA_POSTS = [
   {
@@ -150,7 +203,7 @@ export const ACADEMIA_POSTS = [
     id: "remarkable-journey-eflat-approaching-brahms",
     title:
       "The Remarkable Journey of E-flat: Approaching Brahms’ Op. 120 No. 2 Viola Sonata in Eb Major",
-    descr:
+    desc:
       "A look inside Brahms’ Eb sonata through a harmonic and thematic lens.",
     src: "/images/05_by-serena/academia/The_Remarkable_Journey_of_E.pdf",
   },
@@ -158,7 +211,7 @@ export const ACADEMIA_POSTS = [
     type: "essay",
     id: "beethoven-op131-visual-media",
     title: "Beethoven Op. 131 in Visual Media",
-    descr:
+    desc:
       "The role of Beethoven’s Op. 131 String Quartet in the film A Late Quartet.",
     src: "/images/05_by-serena/academia/Beethoven_Op_131.pdf",
   },

@@ -1,4 +1,3 @@
-// Libraries
 import React from "react";
 
 const ContactBtn = ({ email, text }) => (

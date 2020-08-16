@@ -1,4 +1,3 @@
-// Libraries
 import React from "react";
 
 const VideoList = ({ videos, columns, rows, width, height, justify }) => {
