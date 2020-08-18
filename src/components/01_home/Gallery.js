@@ -92,17 +92,22 @@ const Gallery = () => {
             grid-area: img-10;
             background-image: url("${HOME_GALLERY_PICS.rootDir}/IMG_0010.jpg");
           }
-          @media only screen and (max-width: 280px) {
+          @media only screen and (max-width: 450px) {
             .image-gallery {
-              grid-template-columns: 1fr 1fr;
+              grid-template-columns: 1fr;
               grid-template-rows: auto;
               grid-gap: 0;
               grid-template-areas:
-              "img-1 img-2" 
-              "img-3 img-4"
-              "img-5 img-6"
-              "img-7 img-8"
-              "img-9 img-10"
+              "img-1"
+              "img-2" 
+              "img-3"
+              "img-4"
+              "img-5"
+              "img-6"
+              "img-7"
+              "img-8"
+              "img-9"
+               "img-10"
             }
             .img-1 {
               min-height: 0;
@@ -129,7 +134,7 @@ const Gallery = () => {
             margin: auto;
             padding: 10rem;
           }
-          @media only screen and (max-width: 280px) {
+          @media only screen and (max-width: 450px) {
             .gallery-container {
               margin: 0;
               padding: 0;

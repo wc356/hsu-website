@@ -37,21 +37,21 @@ const LandingImage = () => {
               font-size: 1.2rem;
               font-weight: 500;
             }
-            @media only screen and (max-width: 280px) {
+            @media only screen and (max-width: 450px) {
               .text-container {
                 width: 100%;
                 line-height 2rem;
                 padding: 1rem;
-                margin-top: 9rem;
+                margin-top: 55vw;
               }
               h1 {
-                font-size: 2.5rem;
+                font-size: 13vw;
                 margin-bottom: .2rem;
                 padding-left: 0;
                 text-align: center;
               }
               h2 {
-                font-size: 0.6rem;
+                font-size: 3vw;
               }
             }
           `}
@@ -94,10 +94,10 @@ const LandingImage = () => {
                 transform: rotate(45deg) translate(2.2rem, 2.2rem);
               }
             }
-            @media only screen and (max-width: 280px) {
+            @media only screen and (max-width: 450px) {
               span {
-                height: 30px;
-                width: 30px;
+                height: 8vw;
+                width: 8vw;
               }
             }
           `}
@@ -128,10 +128,22 @@ const LandingImage = () => {
             display: flex;
             box-shadow: inset 0 0 30px #fff;
           }
-          @media only screen and (max-width: 280px) {
+          @media only screen and (max-width: 450px) {
             .landing-pic {
               background-position: 0% 20%;
               background-size: 100%;
+            }
+          }
+          @media only screen and (max-width: 768px) {
+            .landing-pic {
+              background-size: 100%;
+              background-position: 30% 20%;
+            }
+          }
+          @media only screen and (max-width: 1024px) {
+            .landing-pic {
+              background-size: 100%;
+              background-position: 0 30%;
             }
           }
         `}

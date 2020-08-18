@@ -26,9 +26,9 @@ const Navbar = () => {
             a:hover {
               opacity: 0.5;
             }
-            @media only screen and (max-width: 280px) {
+            @media only screen and (max-width: 450px) {
               a {
-                font-size: 2rem;
+                font-size: 11vw;
                 padding-left: 1.5rem;
               }
             }
@@ -144,7 +144,7 @@ const Navbar = () => {
             display: none;
             margin-right: 1.5rem;
           }
-          @media only screen and (max-width: 280px) {
+          @media only screen and (max-width: 450px) {
             .logo {
               margin: 0;
             }

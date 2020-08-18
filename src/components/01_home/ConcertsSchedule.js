@@ -14,6 +14,11 @@ const ConcertsSchedule = () => {
               font-size: 2.5rem;
               text-align: center;
             }
+            @media only screen and (max-width: 450px) {
+              h1 {
+                font-size: 9vw;
+              }
+            }
           `}
         </style>
       </Fragment>
@@ -38,6 +43,11 @@ const ConcertsSchedule = () => {
               width: 100%;
               text-align: center;
               height: 100%;
+            }
+            @media only screen and (max-width: 450px) {
+              li {
+                font-size: 3vw;
+              }
             }
           `}
         </style>
@@ -100,30 +110,24 @@ const ConcertsSchedule = () => {
             flex-direction: column;
             padding: 1rem;
             background: white;
-            margin-top: 1rem;
             margin-top: 8rem;
+            margin-bottom: 15vw;
           }
           .concerts-grid {
             display: grid;
-            padding: 4rem;
             box-shadow: 5px 5px 20px ${colors.gray.xxd};
             grid-template-columns; 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: auto auto auto;
-            column-gap: 3rem;
-            row-gap: 2rem;
+            padding: 3vw;
+            column-gap: 3vw;
+            row-gap: 3vw;
             grid-template-areas:
               "item-1 item-2 item-3 item-4 item-5"
               "item-1 item-2 item-3 item-4 item-5"
               "item-1 item-2 item-3 item-4 item-5"
           }
-          @media only screen and (max-width: 280px) {
-            .concerts {
-              transform: scale(.55);
-            }
+          @media only screen and (max-width: 450px) {
             .concerts-grid {
-              padding: .5rem;
-              column-gap: 0;
-              row-gap: 0;
             }
           }
         `}

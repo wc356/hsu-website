@@ -2,7 +2,6 @@ import React from "react";
 import Markdown from "react-markdown";
 import { HOME_PAGE } from "../../database/index";
 
-import colors from "../../../styles/theme";
 import styles from "./About.module.scss";
 
 const About = () => (
@@ -23,7 +22,7 @@ const About = () => (
             padding: 3rem;
           }
         }
-        @media only screen and (max-width: 280px) {
+        @media only screen and (max-width: 450px) {
           .about-container {
             padding: 1.5rem;
           }

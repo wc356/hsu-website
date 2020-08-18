@@ -19,14 +19,14 @@ const ContactMe = () => {
             h1 {
               color: ${colors.black.l};
               font-family: Montserrat;
-              font-size: 2rem;
               font-weight: 500;
               margin-bottom: 2rem;
             }
-            @media only screen and (max-width: 280px) {
+            @media only screen and (max-width: 350px) {
               h1 {
                 text-align: center;
-                font-size: 1.35rem;
+                // font-size: 1.35rem;
+                font-size: 7vw;
               }
             }
           `}
