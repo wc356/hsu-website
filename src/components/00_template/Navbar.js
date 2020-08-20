@@ -46,6 +46,9 @@ const Navbar = () => {
         </Link>
         <style jsx>
           {`
+            li {
+              list-style: none;
+            }
             a {
               color: ${colors.pink.d};
               display: inline-block;

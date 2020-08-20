@@ -1,25 +1,24 @@
-// Libraries
 import React, { useState, Fragment } from "react";
-// Database
+
 import { BLOG_POSTS } from "../src/database/index";
-// Components
+
 import Layout from "../src/components/00_template/Layout";
 import Blog from "../src/components/05_by-serena/blog/Blog";
 import BackBtn from "../src/components/00_template/BackBtn";
-// Styles
+
 import colors from "../styles/theme";
 
 const BySerenaBlog = () => {
   const [state, setState] = useState("BLOG_HOME");
   const [blogTitle, setBlogTitle] = useState("");
 
-  const renderList = (posts) => {
-    const handleBtnClick = (title) => {
+  function renderList(posts) {
+    function handleBtnClick(title) {
       setState("BLOG_POST");
       setBlogTitle(title);
-    };
+    }
 
-    const renderImg = (pic) => {
+    function renderImg(pic) {
       const PIC_PATH = `/images/05_by-serena/blog/${pic}`;
       return (
         <div className="img-container">
@@ -44,68 +43,74 @@ const BySerenaBlog = () => {
           </style>
         </div>
       );
-    };
+    }
 
-    const renderTitle = (title) => (
-      <div className="title-container">
-        <h1>{title}</h1>
-        <style jsx>
-          {`
-            .title-container {
-              width: 100%;
-              text-align: center;
-            }
-            h1 {
-              font-size: 1rem;
-              font-weight: 500;
-              margin-bottom: 1rem;
-              color: ${colors.pink.d};
-            }
-          `}
-        </style>
-      </div>
-    );
+    function renderTitle(title) {
+      return (
+        <div className="title-container">
+          <h1>{title}</h1>
+          <style jsx>
+            {`
+              .title-container {
+                width: 100%;
+                text-align: center;
+              }
+              h1 {
+                font-size: 1rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+                color: ${colors.pink.d};
+              }
+            `}
+          </style>
+        </div>
+      );
+    }
 
-    const renderDate = (date) => (
-      <div className="date-container">
-        <p>{date}</p>
-        <style jsx>
-          {`
-            .date-container {
-              display: flex;
-              justify-content: flex-end;
-              width: 100%;
-            }
-            p {
-              color: gray;
-              font-family: Montserrat;
-              font-size: 0.9rem;
-            }
-          `}
-        </style>
-      </div>
-    );
+    function renderDate(date) {
+      return (
+        <div className="date-container">
+          <p>{date}</p>
+          <style jsx>
+            {`
+              .date-container {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+              }
+              p {
+                color: gray;
+                font-family: Montserrat;
+                font-size: 0.9rem;
+              }
+            `}
+          </style>
+        </div>
+      );
+    }
 
-    const renderTags = (tags) => (
-      <div className="tags-container">
-        <p>{tags.map((tag) => `#${tag} `)}</p>
-        <style jsx>
-          {`
-            .tags-container {
-              width: 100%;
-              height: 100%;
-              display: flex;
-              align-items: flex-end;
-              justify-content: flex-end;
-              text-align: right;
-            }
-            p {
-              color: ${colors.gray.xxd};
-            }
-          `}
-        </style>
-      </div>
-    );
+    function renderTags(tags) {
+      return (
+        <div className="tags-container">
+          <p>{tags.map((tag) => `#${tag} `)}</p>
+          <style jsx>
+            {`
+              .tags-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+                text-align: right;
+              }
+              p {
+                color: ${colors.gray.xxd};
+              }
+            `}
+          </style>
+        </div>
+      );
+    }
 
     return (
       <Fragment>
@@ -160,22 +165,18 @@ const BySerenaBlog = () => {
         </style>
       </Fragment>
     );
-  };
+  }
 
-  const renderBlog = (title, setState) => (
-    <Blog title={title} setState={(arg) => setState(arg)} />
-  );
+  function renderBlog(title, setState) {
+    return <Blog title={title} setState={(arg) => setState(arg)} />;
+  }
 
-  const renderBlogApp = () => {
-    switch (state) {
-      case "BLOG_HOME":
-        return renderList(BLOG_POSTS);
-      case "BLOG_POST":
-        return renderBlog(blogTitle, setState);
-    }
-  };
-
-  return <Layout>{renderBlogApp()}</Layout>;
+  switch (state) {
+    case "BLOG_HOME":
+      return <Layout>{renderList(BLOG_POSTS)}</Layout>;
+    case "BLOG_POST":
+      return <Layout>{renderBlog(blogTitle, setState)}</Layout>;
+  }
 };
 
 export default BySerenaBlog;

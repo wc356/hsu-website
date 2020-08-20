@@ -1,10 +1,12 @@
-// Libraries
 import React, { Fragment } from "react";
-// Components
+import Markdown from "react-markdown";
+
 import Layout from "../src/components/00_template/Layout";
 import ContactBtn from "../src/components/00_template/ContactBtn";
-// Database
+
 import { STUDIO } from "../src/database/index";
+
+import styles from "../src/components/04_studio/studio.module.scss";
 
 const StudioPage = () => {
   function renderPageTitle({ title, subTitle }) {
@@ -86,6 +88,10 @@ const StudioPage = () => {
     ));
   }
 
+  function renderSlogan(text) {
+    return <Markdown className={styles.markdown} source={text} />;
+  }
+
   return (
     <Layout>
       <div className="studio-container">
@@ -97,6 +103,7 @@ const StudioPage = () => {
           {renderImage(STUDIO.img)}
           {renderBodyTitle(STUDIO.body_title)}
           {renderBodyContent(STUDIO.body)}
+          {renderSlogan(STUDIO.slogan)}
           <ContactBtn
             email={STUDIO.contact_btn.email}
             text={STUDIO.contact_btn.text}

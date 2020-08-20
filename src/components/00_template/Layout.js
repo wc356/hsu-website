@@ -24,9 +24,6 @@ const Layout = (props) => (
         body {
           height: 100%;
         }
-        p {
-          text-align: justify;
-        }
         h1,
         h3 {
           font-family: "Montserrat", sans-serif;
@@ -37,9 +34,6 @@ const Layout = (props) => (
           padding: 0;
           margin: 0;
           box-sizing: border-box;
-        }
-        li {
-          list-style: none;
         }
         a {
           text-decoration: none;

@@ -1,9 +1,10 @@
-// Libraries
 import React from "react";
-// Database
+import Markdown from "react-markdown";
+
 import { BLOG_POSTS, AUTHOR_ABOUT } from "../../../database/index";
-// Styles
+
 import colors from "../../../../styles/theme";
+import styles from "./Blog.module.scss";
 
 const Blog = ({ title, setState }) => {
   const post = BLOG_POSTS.find((post) => post.title === title);
@@ -45,6 +46,7 @@ const Blog = ({ title, setState }) => {
               display: flex;
               flex-direction: column;
               align-items: center;
+              text-align: center;
             }
             h1 {
               font-family: "Baskervville", serif;
@@ -162,7 +164,7 @@ const Blog = ({ title, setState }) => {
       <section className="content">
         {textArray.map((text, i) => (
           <article key={i}>
-            <p>{text}</p>
+            <Markdown className={styles.markdown} source={text} />
           </article>
         ))}
         <button onClick={() => setState("BLOG_HOME")}>
@@ -174,7 +176,7 @@ const Blog = ({ title, setState }) => {
             .content {
               padding: 1rem 0;
             }
-            .content article {
+            article {
               padding: 1rem 0;
               line-height: 1.75;
               color: ${colors.black.l};
@@ -252,7 +254,6 @@ const Blog = ({ title, setState }) => {
               align-items: center;
             }
             .flex-left {
-              text-align: left;
               max-width: 45rem;
             }
             hr {
@@ -322,7 +323,6 @@ const Blog = ({ title, setState }) => {
             .flex-left {
               display: flex;
               align-items: center;
-              text-align: left;
               line-height: 1.5rem;
             }
           `}
@@ -349,7 +349,6 @@ const Blog = ({ title, setState }) => {
           .header-container {
             display: flex;
             flex-direction: column;
-            text-align: center;
             background: #fff;
             height: 100%;
             padding: 4.5rem 20%;

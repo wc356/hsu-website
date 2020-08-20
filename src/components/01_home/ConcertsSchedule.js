@@ -36,6 +36,7 @@ const ConcertsSchedule = () => {
         <style jsx>
           {`
             li {
+              list-style: none;
               font-size: 1.3rem;
               font-weight: 600;
               color: ${colors.pink.d};
@@ -72,6 +73,7 @@ const ConcertsSchedule = () => {
         <style jsx>
           {`
             li {
+              list-style: none;
               padding: 0.5rem;
               width: 100%;
               text-align: center;
