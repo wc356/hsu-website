@@ -13,7 +13,6 @@ const AboutPage = () => {
           {`
             ul {
               padding: 0 4rem;
-              grid-area: text;
             }
             article {
               margin: 2rem 0;
@@ -21,6 +20,11 @@ const AboutPage = () => {
               line-height: 2rem;
               text-align: justify;
               text-justify: inter-word;
+            }
+            @media only screen and (max-width: 960px) {
+              ul {
+                grid-area: text;
+              }
             }
             @media only screen and (max-width: 400px) {
               ul {
@@ -41,10 +45,14 @@ const AboutPage = () => {
           {`
             .image-container {
               align-self: center;
-              grid-area: pic;
             }
             img {
               width: 100%;
+            }
+            @media only screen and (max-width: 960px) {
+              .image-container {
+                grid-area: pic;
+              }
             }
           `}
         </style>
