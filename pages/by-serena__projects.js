@@ -57,11 +57,7 @@ const BySerenaProjects = () => {
                 text-align: justify;
                 text-justify: inter-word;
                 line-height: 1.5rem;
-              }
-              @media only screen and (max-width: 400px) {
-                article {
-                  margin-bottom: 1rem;
-                }
+                width: 100%;
               }
             `}
           </style>
@@ -75,7 +71,7 @@ const BySerenaProjects = () => {
         <VideoList
           videos={proj.videos}
           columns="1"
-          width="70vw"
+          width="100%"
           height="30rem"
           justify={true}
         />
