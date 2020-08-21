@@ -106,6 +106,7 @@ const BySerena = () => {
           @media only screen and (max-width: 740px) {
             .flex-container {
               flex-direction: column;
+              min-height: 0;
             }
           }
         `}
