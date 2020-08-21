@@ -81,6 +81,8 @@ const BySerenaProjects = () => {
             .hidden-gems-container {
               text-align: center;
               padding-top: 2rem;
+              width: 100%;
+              height: 100%;
             }
           `}
         </style>
