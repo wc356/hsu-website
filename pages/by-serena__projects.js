@@ -41,6 +41,7 @@ const BySerenaProjects = () => {
             {`
               .description-container {
                 margin-top: 7rem;
+                margin-bottom: 1rem;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -52,11 +53,15 @@ const BySerenaProjects = () => {
               }
               article {
                 text-align: left;
-                margin-bottom: 3rem;
+                margin-bottom: 1rem;
                 text-align: justify;
                 text-justify: inter-word;
                 line-height: 1.5rem;
-                width: 70vw;
+              }
+              @media only screen and (max-width: 400px) {
+                article {
+                  margin-bottom: 1rem;
+                }
               }
             `}
           </style>
@@ -88,49 +93,29 @@ const BySerenaProjects = () => {
   }
 
   function renderBackBtn() {
-    return (
-      <div className="button-container">
-        <div className="button-container__padding">
-          <BackBtn href="/by-serena" />
-        </div>
-        <style jsx>
-          {`
-            .button-container {
-              display: flex;
-              justify-content: center;
-            }
-            .button-container__padding {
-              width: 70vw;
-            }
-          `}
-        </style>
-      </div>
-    );
+    return <BackBtn href="/by-serena" />;
   }
 
   return (
     <Layout>
-      <div className="projects-container">
-        <div className="projects-list">
-          <section className="hidden-gems">
-            {renderHiddenGems(PROJECTS.HIDDEN_GEMS)}
-          </section>
-          {renderBackBtn()}
-        </div>
-        <style jsx>
-          {`
-            .projects-container {
-              min-height: 90vh;
-            }
-            .projects-list {
-              padding: 3rem 0;
-            }
-            .hidden-gems {
-              margin-bottom: 3rem;
-            }
-          `}
-        </style>
+      <div className="projects-list">
+        <section className="hidden-gems">
+          {renderHiddenGems(PROJECTS.HIDDEN_GEMS)}
+        </section>
+        {renderBackBtn()}
       </div>
+      <style jsx>
+        {`
+          .projects-list {
+            padding: 3rem 10vw;
+          }
+          @media only screen and (max-width: 400px) {
+            .projects-list {
+              padding: 3rem 1rem;
+            }
+          }
+        `}
+      </style>
     </Layout>
   );
 };

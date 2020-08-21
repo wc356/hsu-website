@@ -146,13 +146,16 @@ const BySerenaAcademia = () => {
         <style jsx>
           {`
             .academia-container {
-              min-height: 90vh;
               padding: 3rem 5rem;
+            }
+            @media only screen and (max-width: 600px) {
+              .academia-container {
+                padding: 2rem 1rem;
+              }
             }
           `}
         </style>
       </div>
-      );
     </Layout>
   );
 };
