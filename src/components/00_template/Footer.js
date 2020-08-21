@@ -1,8 +1,6 @@
-// Libraries
 import React from "react";
-// Database
 import { FOOTER } from "../../database/index";
-// Styles
+
 import colors from "../../../styles/theme";
 
 const Footer = () => {
@@ -52,7 +50,8 @@ const Footer = () => {
             justify-content: center;
             align-items: center;
             bottom: 0;
-            height: 20vh;
+            height: 200px;
+            width: 100vw;
             background: ${colors.gray.xl};
           }
         `}

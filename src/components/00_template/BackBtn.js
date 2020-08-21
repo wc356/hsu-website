@@ -1,7 +1,6 @@
-// Libraries
 import React, { Fragment } from "react";
 import Link from "next/link";
-// Styles
+
 import colors from "../../../styles/theme";
 
 const BackBtn = ({ href }) => (
@@ -21,6 +20,7 @@ const BackBtn = ({ href }) => (
         font-family: Montserrat;
         font-weight: 500;
         transition: all 0.15s;
+        white-space: nowrap;
       }
       a:hover {
         background: lightgray;

@@ -5,6 +5,7 @@ import { BLOG_POSTS } from "../src/database/index";
 import Layout from "../src/components/00_template/Layout";
 import Blog from "../src/components/05_by-serena/blog/Blog";
 import BackBtn from "../src/components/00_template/BackBtn";
+import Footer from "../src/components/00_template/Footer";
 
 import colors from "../styles/theme";
 
@@ -13,6 +14,29 @@ const BySerenaBlog = () => {
   const [blogTitle, setBlogTitle] = useState("");
 
   function renderList(posts) {
+    function renderBackBtn() {
+      return (
+        <div className="btn-container">
+          <BackBtn href="/by-serena" />
+          <style jsx>
+            {`
+              .btn-container {
+                margin-right: 2rem;
+                padding-top: 0.7rem;
+              }
+              @media only screen and (max-width: 900px) {
+                .btn-container {
+                  margin-bottom: 2rem;
+                  width: 100%;
+                  margin-left: 2rem;
+                }
+              }
+            `}
+          </style>
+        </div>
+      );
+    }
+
     function handleBtnClick(title) {
       setState("BLOG_POST");
       setBlogTitle(title);
@@ -115,9 +139,7 @@ const BySerenaBlog = () => {
     return (
       <Fragment>
         <div className="blog-landing-container">
-          <div className="btn-container">
-            <BackBtn href="/by-serena" />
-          </div>
+          {renderBackBtn()}
           {posts.map((post) => (
             <button key={post.id} onClick={() => handleBtnClick(post.title)}>
               {renderImg(post.pic)}
@@ -129,22 +151,18 @@ const BySerenaBlog = () => {
         </div>
         <style jsx>
           {`
-            .btn-container {
-              margin-right: 2rem;
-              padding-top: 0.7rem;
-            }
             .blog-landing-container {
               padding: 3rem;
               display: flex;
               width: 100vw;
-              height: calc(100vh - 6rem);
+              min-height: calc(100vh - 6rem);
             }
             button {
               display: flex;
               flex-direction: column;
               text-align: left;
               height: 400px;
-              width: 450px;
+              max-width: 450px;
               padding: 1rem;
               background: #fff;
               transition: all 0.15s;
@@ -160,6 +178,17 @@ const BySerenaBlog = () => {
             }
             button:hover {
               color: ${colors.blue.main};
+            }
+            @media only screen and (max-width: 900px) {
+              .blog-landing-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+              }
+              button {
+                margin-right: 0;
+                margin-bottom: 1rem;
+              }
             }
           `}
         </style>
