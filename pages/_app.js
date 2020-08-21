@@ -7,6 +7,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const ServerApp = ({ Component, pageProps }) => (
   <Fragment>
     <Head>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-163343549-2"
