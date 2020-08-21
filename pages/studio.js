@@ -70,7 +70,7 @@ const StudioPage = () => {
             @media only screen and (max-width: 430px) {
               .img-container {
                 float: none;
-                width: 100%;
+                width: 10%;
               }
             }
           `}
