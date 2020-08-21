@@ -50,6 +50,7 @@ const StudioPage = () => {
               display: flex;
               float: left;
               margin: 0 3rem 3rem 0;
+              object-fit: cover;
             }
             img {
               height: auto;
