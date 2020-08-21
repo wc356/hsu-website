@@ -28,6 +28,11 @@ const StudioPage = () => {
             h3 {
               font-weight: 400;
             }
+            @media only screen and (max-width: 640px) {
+              .title-container {
+                margin: 5rem 1rem;
+              }
+            }
           `}
         </style>
       </div>
@@ -51,6 +56,23 @@ const StudioPage = () => {
               width: 100%;
               object-fit: cover;
             }
+            @media only screen and (max-width: 800px) {
+              .img-container {
+                margin: 0 1rem 0.5rem 0;
+              }
+            }
+            @media only screen and (max-width: 480px) {
+              .img-container {
+                width: 40%;
+                margin: 0 1rem 0.5rem 0;
+              }
+            }
+            @media only screen and (max-width: 400px) {
+              .img-container {
+                float: none;
+                width: 100%;
+              }
+            }
           `}
         </style>
       </div>
@@ -65,6 +87,9 @@ const StudioPage = () => {
           h3 {
             font-weight: 400;
             font-size: 2rem;
+          }
+          @media only screen and (max-width: 400px) {
+            text-align: center;
           }
         `}</style>
       </Fragment>
@@ -117,6 +142,19 @@ const StudioPage = () => {
             .studio__body {
               padding: 0 6rem;
               padding-bottom: 3rem;
+            }
+            @media only screen and (max-width: 640px) {
+              .studio__body {
+                padding: 0 1rem;
+                padding-bottom: 3rem;
+              }
+            }
+            @media only screen and (max-width: 400px) {
+              .studio-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
             }
           `}
         </style>

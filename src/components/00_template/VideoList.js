@@ -34,8 +34,6 @@ const VideoList = ({ videos, columns, rows, width, height, justify }) => {
           }
           @media screen and (max-width: 960px) {
           }
-          @media screen and (max-width: 560px) {
-          }
         `}
       </style>
     </li>
@@ -56,10 +54,6 @@ const VideoList = ({ videos, columns, rows, width, height, justify }) => {
             grid-template-rows: repeat(${rows}, 1fr);
             column-gap: 2rem;
             row-gap: 5rem;
-          }
-          @media screen and (max-width: 960px) {
-          }
-          @media screen and (max-width: 560px) {
           }
         `}
       </style>

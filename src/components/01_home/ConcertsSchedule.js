@@ -128,10 +128,6 @@ const ConcertsSchedule = () => {
               "item-1 item-2 item-3 item-4 item-5"
               "item-1 item-2 item-3 item-4 item-5"
           }
-          @media only screen and (max-width: 450px) {
-            .concerts-grid {
-            }
-          }
         `}
       </style>
     </section>
