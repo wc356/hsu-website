@@ -67,7 +67,7 @@ const StudioPage = () => {
                 margin: 0 1rem 0.5rem 0;
               }
             }
-            @media only screen and (max-width: 400px) {
+            @media only screen and (max-width: 430px) {
               .img-container {
                 float: none;
                 width: 100%;
@@ -88,7 +88,7 @@ const StudioPage = () => {
             font-weight: 400;
             font-size: 2rem;
           }
-          @media only screen and (max-width: 400px) {
+          @media only screen and (max-width: 430px) {
             text-align: center;
           }
         `}</style>
@@ -149,7 +149,7 @@ const StudioPage = () => {
                 padding-bottom: 3rem;
               }
             }
-            @media only screen and (max-width: 400px) {
+            @media only screen and (max-width: 430px) {
               .studio-container {
                 display: flex;
                 flex-direction: column;
