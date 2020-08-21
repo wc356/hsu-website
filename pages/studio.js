@@ -72,6 +72,10 @@ const StudioPage = () => {
                 float: none;
                 width: 100%;
               }
+              img {
+                height: auto;
+                width: 100%;
+              }
             }
           `}
         </style>
