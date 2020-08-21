@@ -71,6 +71,7 @@ const StudioPage = () => {
               .img-container {
                 float: none;
                 width: 100%;
+                max-height: 515px;
               }
             }
           `}
