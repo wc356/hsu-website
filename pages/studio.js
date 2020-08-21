@@ -75,6 +75,7 @@ const StudioPage = () => {
               img {
                 height: auto;
                 width: 100%;
+                object-fit: cover;
               }
             }
           `}
