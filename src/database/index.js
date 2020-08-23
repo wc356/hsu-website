@@ -112,6 +112,14 @@ export const MEDIA_PAGE = {
       title: "Max Bruch: Double Concerto in E minor, Op.88",
       src: "//youtube.com/embed/z7JxLLMTY90",
     },
+    {
+      title: "Bowen Viola Sonata Op. 18 No. 1",
+      src: "//youtube.com/embed/GcQKNuW_a4A",
+    },
+    {
+      title: "Hindemith Sonata Op. 11 No. 4",
+      src: "//youtube.com/embed/bG3HCAE_dB8",
+    },
   ],
   audios: [
     {
@@ -326,7 +334,7 @@ export const FOOTER = {
   social: [
     {
       social_media: "Instagram",
-      href: "//instagram.com/sereneserenahsu/",
+      href: "//instagram.com/serenahsu.classical/",
       src: "/images/00_template/glyph-logo_May2016.png",
       alt: "instagram-logo",
     },
