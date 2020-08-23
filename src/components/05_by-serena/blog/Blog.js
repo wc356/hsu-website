@@ -358,6 +358,11 @@ const Blog = ({ title, setState }) => {
             margin-top: 3rem;
             vertical-align: middle;
           }
+          @media only screen and (max-width: 400px) {
+            .header-container {
+              padding: 4.5rem 1rem;
+            }
+          }
         `}
       </style>
     </>
