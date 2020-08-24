@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react";
+import Link from "next/link";
 
 import { BLOG_POSTS } from "../src/database/index";
 
@@ -10,9 +11,6 @@ import Footer from "../src/components/00_template/Footer";
 import colors from "../styles/theme";
 
 const BySerenaBlog = () => {
-  const [state, setState] = useState("BLOG_HOME");
-  const [blogTitle, setBlogTitle] = useState("");
-
   function renderList(posts) {
     function renderBackBtn() {
       return (
@@ -141,12 +139,14 @@ const BySerenaBlog = () => {
         <div className="blog-landing-container">
           {renderBackBtn()}
           {posts.map((post) => (
-            <button key={post.id} onClick={() => handleBtnClick(post.title)}>
-              {renderImg(post.pic)}
-              {renderTitle(post.title)}
-              {renderDate(post.date)}
-              {renderTags(post.tags)}
-            </button>
+            <Link key={post.id} href="/blog/[blog]" as={`/blog/${post.title}`}>
+              <a>
+                {renderImg(post.pic)}
+                {renderTitle(post.title)}
+                {renderDate(post.date)}
+                {renderTags(post.tags)}
+              </a>
+            </Link>
           ))}
         </div>
         <style jsx>
@@ -157,7 +157,7 @@ const BySerenaBlog = () => {
               width: 100vw;
               min-height: calc(100vh - 6rem);
             }
-            button {
+            a {
               display: flex;
               flex-direction: column;
               text-align: left;
@@ -168,15 +168,11 @@ const BySerenaBlog = () => {
               transition: all 0.15s;
               color: ${colors.blue.l};
               margin-right: 2rem;
-              cursor: pointer;
-              border: 0;
               box-shadow: 3px 3px 10px ${colors.gray.d};
             }
-            button:hover {
+            a:hover {
               transform: translateY(-6px);
               box-shadow: 3px 3px 10px ${colors.pink.m};
-            }
-            button:hover {
               color: ${colors.blue.main};
             }
             @media only screen and (max-width: 900px) {
@@ -185,7 +181,7 @@ const BySerenaBlog = () => {
                 align-items: center;
                 padding: 1rem;
               }
-              button {
+              a {
                 margin-right: 0;
                 margin-bottom: 1rem;
               }
@@ -196,16 +192,11 @@ const BySerenaBlog = () => {
     );
   }
 
-  function renderBlog(title, setState) {
-    return <Blog title={title} setState={(arg) => setState(arg)} />;
+  function renderBlog(title) {
+    return <Blog title={title} />;
   }
 
-  switch (state) {
-    case "BLOG_HOME":
-      return <Layout>{renderList(BLOG_POSTS)}</Layout>;
-    case "BLOG_POST":
-      return <Layout>{renderBlog(blogTitle, setState)}</Layout>;
-  }
+  return <Layout>{renderList(BLOG_POSTS)}</Layout>;
 };
 
 export default BySerenaBlog;

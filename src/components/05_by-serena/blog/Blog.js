@@ -1,12 +1,16 @@
 import React from "react";
+import Link from "next/link";
 import Markdown from "react-markdown";
+
+import Layout from "../../00_template/Layout";
+import BackBtn from "../../00_template/BackBtn";
 
 import { BLOG_POSTS, AUTHOR_ABOUT } from "../../../database/index";
 
 import colors from "../../../../styles/theme";
 import styles from "./Blog.module.scss";
 
-const Blog = ({ title, setState }) => {
+const Blog = ({ title }) => {
   const post = BLOG_POSTS.find((post) => post.title === title);
 
   function renderImg(pic) {
@@ -167,10 +171,9 @@ const Blog = ({ title, setState }) => {
             <Markdown className={styles.markdown} source={text} />
           </article>
         ))}
-        <button onClick={() => setState("BLOG_HOME")}>
-          <i id="icon-arrow" />
-          BACK
-        </button>
+        <div className="btn-container">
+          <BackBtn href="/by-serena__blog" />
+        </div>
         <style jsx>
           {`
             .content {
@@ -181,28 +184,8 @@ const Blog = ({ title, setState }) => {
               line-height: 1.75;
               color: ${colors.black.l};
             }
-            button {
-              margin-top: 1rem;
-              padding: 0.75rem;
-              cursor: pointer;
-              border: 0;
-              letter-spacing: 1px;
-              display: flex;
-              align-items: center;
-              background: ${colors.gray.l};
-              transition: all 0.15s;
-            }
-            button #icon-arrow {
-              content: "";
-              width: 10px;
-              height: 10px;
-              border-bottom: 1px solid black;
-              border-right: 1px solid black;
-              transform: rotate(135deg);
-              margin-right: 8px;
-            }
-            button:hover {
-              background: lightgray;
+            .btn-container {
+              margin-top: 1.5rem;
             }
           `}
         </style>
@@ -210,7 +193,7 @@ const Blog = ({ title, setState }) => {
     );
   }
 
-  function renderFooter(tags) {
+  function renderBlogFooter(tags) {
     const renderTags = (tags) => (
       <>
         <h1>Tags:</h1>
@@ -267,7 +250,7 @@ const Blog = ({ title, setState }) => {
     );
   }
 
-  function renderFooterNavbar(authorDesc) {
+  function renderBlogFooterNav(authorDesc) {
     const renderAuthorPic = () => (
       <section className="author-pic">
         <img src="/images/IMG_0878.jpg" alt="#" />
@@ -331,8 +314,11 @@ const Blog = ({ title, setState }) => {
     );
   }
 
+  console.log(title);
+  console.log(post);
+
   return (
-    <>
+    <Layout>
       {renderImg(post.pic)}
       <div className="header-container">
         {renderTitle(post.title)}
@@ -340,8 +326,8 @@ const Blog = ({ title, setState }) => {
           {renderReadTime(post.read_time)}
           {renderAuthorSocial(post.date)}
           {renderBody(post.body)}
-          {renderFooter(post.tags)}
-          {renderFooterNavbar(AUTHOR_ABOUT)}
+          {renderBlogFooter(post.tags)}
+          {renderBlogFooterNav(AUTHOR_ABOUT)}
         </section>
       </div>
       <style jsx>
@@ -365,7 +351,7 @@ const Blog = ({ title, setState }) => {
           }
         `}
       </style>
-    </>
+    </Layout>
   );
 };
 
