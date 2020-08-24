@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -10,7 +11,13 @@ import { BLOG_POSTS, AUTHOR_ABOUT } from "../../../database/index";
 import colors from "../../../../styles/theme";
 import styles from "./Blog.module.scss";
 
-const Blog = ({ title }) => {
+const Blog = () => {
+  const router = useRouter();
+  const title = router.query.blog;
+
+  console.log(router);
+  console.log(title);
+
   const post = BLOG_POSTS.find((post) => post.title === title);
 
   function renderImg(pic) {
@@ -313,9 +320,6 @@ const Blog = ({ title }) => {
       </section>
     );
   }
-
-  console.log(title);
-  console.log(post);
 
   return (
     <Layout>

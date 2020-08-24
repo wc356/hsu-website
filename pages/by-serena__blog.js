@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import Link from "next/link";
 
 import { BLOG_POSTS } from "../src/database/index";
@@ -6,7 +6,6 @@ import { BLOG_POSTS } from "../src/database/index";
 import Layout from "../src/components/00_template/Layout";
 import Blog from "../src/components/05_by-serena/blog/Blog";
 import BackBtn from "../src/components/00_template/BackBtn";
-import Footer from "../src/components/00_template/Footer";
 
 import colors from "../styles/theme";
 
@@ -33,11 +32,6 @@ const BySerenaBlog = () => {
           </style>
         </div>
       );
-    }
-
-    function handleBtnClick(title) {
-      setState("BLOG_POST");
-      setBlogTitle(title);
     }
 
     function renderImg(pic) {
@@ -190,10 +184,6 @@ const BySerenaBlog = () => {
         </style>
       </Fragment>
     );
-  }
-
-  function renderBlog(title) {
-    return <Blog title={title} />;
   }
 
   return <Layout>{renderList(BLOG_POSTS)}</Layout>;
