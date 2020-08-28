@@ -39,7 +39,7 @@ tags: ["classicalmusic", "musician", "5-steps", "practice", "routine", "memory"]
 
 1. Record yourself playing through the blocked sections from Step 3
 2. Watch the recording and take notes
-3. You don’t need fancy recording equipment to do this step; a phone or audio recorder will do (there are many free resources online to record as well)  
+3. You don’t need fancy recording equipment to do this step; a phone or audio recorder will do (there are many free resources online to record as well)
 
 # REPEAT!!!
 
