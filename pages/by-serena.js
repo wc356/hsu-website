@@ -1,8 +1,8 @@
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
-
 import Layout from "../src/components/00_template/Layout";
-
+import { BY_SERENA_PAGE } from "../src/database/index";
 import colors from "../styles/theme";
 
 const BySerena = () => {
@@ -80,6 +80,9 @@ const BySerena = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>{BY_SERENA_PAGE.page_title}</title>
+      </Head>
       <div className="flex-container">
         {renderNavSection({
           path: "/by-serena__academia",

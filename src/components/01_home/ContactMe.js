@@ -1,14 +1,16 @@
 import React from "react";
 import ContactBtn from "../00_template/ContactBtn";
-import { HOME_CONTACT } from "../../database/index";
+import { HOME_PAGE } from "../../database/index";
 
 import colors from "../../../styles/theme";
 
 const ContactMe = () => {
-  const title = HOME_CONTACT.title;
-  const contactBtn = HOME_CONTACT.contact_btn;
-  const email = contactBtn.email;
-  const text = contactBtn.text;
+  const CONTACT = HOME_PAGE.contact;
+  const CONTACT_BTN = CONTACT.button;
+
+  const title = CONTACT.title;
+  const email = CONTACT_BTN.email;
+  const text = CONTACT_BTN.text;
 
   function renderTitle(title) {
     return (

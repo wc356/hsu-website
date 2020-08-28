@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-
+import Head from "next/head";
 import Layout from "../src/components/00_template/Layout";
 import BackBtn from "../src/components/00_template/BackBtn";
 import VideoList from "../src/components/00_template/VideoList";
-import { PROJECTS } from "../src/database/index";
+import { PROJECTS_PAGE } from "../src/database/index";
 
 const BySerenaProjects = () => {
   function renderHiddenGems(proj) {
@@ -96,9 +96,12 @@ const BySerenaProjects = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>{PROJECTS_PAGE.page_title}</title>
+      </Head>
       <div className="projects-list">
         <section className="hidden-gems">
-          {renderHiddenGems(PROJECTS.HIDDEN_GEMS)}
+          {renderHiddenGems(PROJECTS_PAGE.HIDDEN_GEMS)}
         </section>
         {renderBackBtn()}
       </div>

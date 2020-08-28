@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import Link from "next/link";
 import colors from "../../../styles/theme";
 
-const Navbar = () => {
+export default function Navbar() {
   const [navActive, setNavActive] = useState(false);
 
   function renderLogo(path, logo) {
@@ -187,6 +187,4 @@ const Navbar = () => {
       </style>
     </section>
   );
-};
-
-export default Navbar;
+}

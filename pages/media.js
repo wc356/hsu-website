@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Head from "next/head";
 import Layout from "../src/components/00_template/Layout";
 import VideoList from "../src/components/00_template/VideoList";
 import { MEDIA_PAGE } from "../src/database/index";
@@ -91,6 +92,9 @@ const MediaPage = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>{MEDIA_PAGE.page_title}</title>
+      </Head>
       <div className="flex-container">
         {renderTitle(title)}
         <VideoList videos={videos} columns="3" rows="2" height="20rem" />

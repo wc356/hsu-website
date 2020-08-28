@@ -1,14 +1,13 @@
 import React, { Fragment } from "react";
-
-import { ACADEMIA_POSTS, AUTHOR_ABOUT } from "../src/database/index";
+import Head from "next/head";
+import { ACADEMIA_PAGE, AUTHOR_ABOUT } from "../src/database/index";
 import Layout from "../src/components/00_template/Layout";
 import BackBtn from "../src/components/00_template/BackBtn";
-
 import colors from "../styles/theme";
 
-const BySerenaAcademia = () => {
-  function renderArticles() {
-    return ACADEMIA_POSTS.map((post) => {
+export default function BySerenaAcademia() {
+  function renderArticles(articles) {
+    return articles.map((post) => {
       const title = post.title;
       const desc = post.desc;
       const src = post.src;
@@ -140,8 +139,11 @@ const BySerenaAcademia = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>{ACADEMIA_PAGE.page_title}</title>
+      </Head>
       <div className="academia-container">
-        {renderArticles()}
+        {renderArticles(ACADEMIA_PAGE.posts)}
         <BackBtn href="/by-serena" />
         <style jsx>
           {`
@@ -158,6 +160,4 @@ const BySerenaAcademia = () => {
       </div>
     </Layout>
   );
-};
-
-export default BySerenaAcademia;
+}

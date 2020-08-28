@@ -1,11 +1,10 @@
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
-
 import Layout from "../src/components/00_template/Layout";
 import BackBtn from "../src/components/00_template/BackBtn";
-
 import { getSortedPostsData } from "../src/lib/posts";
-
+import { BLOG_PAGE } from "../src/database/index";
 import colors from "../styles/theme";
 
 export default function BySerenaBlog({ allPostsData }) {
@@ -128,6 +127,9 @@ export default function BySerenaBlog({ allPostsData }) {
 
   return (
     <Layout>
+      <Head>
+        <title>{BLOG_PAGE.page_title}</title>
+      </Head>
       <div className="blog-landing-container">
         {renderBackBtn()}
         {allPostsData.map(({ id, title, pic, date, tags }) => (

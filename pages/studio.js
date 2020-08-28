@@ -1,11 +1,9 @@
 import React, { Fragment } from "react";
+import Head from "next/head";
 import Markdown from "react-markdown";
-
 import Layout from "../src/components/00_template/Layout";
 import ContactBtn from "../src/components/00_template/ContactBtn";
-
-import { STUDIO } from "../src/database/index";
-
+import { STUDIO_PAGE } from "../src/database/index";
 import styles from "../src/components/04_studio/studio.module.scss";
 
 const StudioPage = () => {
@@ -120,19 +118,22 @@ const StudioPage = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>{STUDIO_PAGE.page_title}</title>
+      </Head>
       <div className="studio-container">
         {renderPageTitle({
-          title: STUDIO.page_title,
-          subTitle: STUDIO.sub_title,
+          title: STUDIO_PAGE.main_title,
+          subTitle: STUDIO_PAGE.sub_title,
         })}
         <div className="studio__body">
-          {renderImage(STUDIO.img)}
-          {renderBodyTitle(STUDIO.body_title)}
-          {renderBodyContent(STUDIO.body)}
-          {renderSlogan(STUDIO.slogan)}
+          {renderImage(STUDIO_PAGE.img)}
+          {renderBodyTitle(STUDIO_PAGE.body_title)}
+          {renderBodyContent(STUDIO_PAGE.body)}
+          {renderSlogan(STUDIO_PAGE.slogan)}
           <ContactBtn
-            email={STUDIO.contact_btn.email}
-            text={STUDIO.contact_btn.text}
+            email={STUDIO_PAGE.contact_btn.email}
+            text={STUDIO_PAGE.contact_btn.text}
           />
         </div>
         <style jsx>

@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+
 import Layout from "../src/components/00_template/Layout";
 import { ABOUT_PAGE } from "../src/database/index";
 
@@ -62,6 +64,9 @@ const AboutPage = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>{ABOUT_PAGE.page_title}</title>
+      </Head>
       <div className="about-container">
         {renderAboutText(ABOUT_PAGE.text)}
         {renderAboutPic(ABOUT_PAGE.pic)}

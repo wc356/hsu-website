@@ -1,13 +1,11 @@
 import React from "react";
-
+import Head from "next/head";
 import Layout from "../../src/components/00_template/Layout";
 import BackBtn from "../../src/components/00_template/BackBtn";
-
+import { getAllPostIds, getPostData } from "../../src/lib/posts";
 import { AUTHOR_ABOUT } from "../../src/database/index";
-
 import colors from "../../styles/theme";
 import styles from "../../styles/blog/Blog.module.scss";
-import { getAllPostIds, getPostData } from "../../src/lib/posts";
 
 export default function Blog({ postData }) {
   function renderImg(pic) {
@@ -163,7 +161,10 @@ export default function Blog({ postData }) {
   function renderBody(contentHtml) {
     return (
       <section>
-        <div className={styles.markdown} dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <div
+          className={styles.markdown}
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
         <div className="btn-container">
           <BackBtn href="/by-serena__blog" />
         </div>
@@ -304,6 +305,9 @@ export default function Blog({ postData }) {
 
   return (
     <Layout>
+      <Head>
+        <title>{`${postData.title} | Serena Hsu 🎻`}</title>
+      </Head>
       {renderImg(postData.pic)}
       <div className="header-container">
         {renderTitle(postData.title)}

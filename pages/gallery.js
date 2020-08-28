@@ -1,30 +1,35 @@
-// Libraries
 import React from "react";
+import Head from "next/head";
 import { Carousel } from "react-responsive-carousel";
-// Components
+import { GALLERY_PAGE } from "../src/database/index";
 import Layout from "../src/components/00_template/Layout";
 
-const GalleryPage = () => {
-  const renderImg = (imgPath, alt) => (
-    <div className="img-container">
-      <img src={imgPath} alt={alt} />
-      <style jsx>
-        {`
-          .img-container {
-            height: 45rem;
-            object-fit: contain;
-          }
-          img {
-            object-fit: contain;
-            height: 100%;
-          }
-        `}
-      </style>
-    </div>
-  );
+export default function GalleryPage() {
+  function renderImg(imgPath, alt) {
+    return (
+      <div className="img-container">
+        <img src={imgPath} alt={alt} />
+        <style jsx>
+          {`
+            .img-container {
+              height: 45rem;
+              object-fit: contain;
+            }
+            img {
+              object-fit: contain;
+              height: 100%;
+            }
+          `}
+        </style>
+      </div>
+    );
+  }
 
   return (
     <Layout>
+      <Head>
+        <title>{GALLERY_PAGE.page_title}</title>
+      </Head>
       <Carousel autoPlay={true} infiniteLoop={true}>
         {renderImg("/images/IMG_0878.jpg", "red-dress-standing-1")}
         {renderImg("/images/IMG_9457.jpg", "red-dress-standing-2")}
@@ -47,6 +52,4 @@ const GalleryPage = () => {
       </Carousel>
     </Layout>
   );
-};
-
-export default GalleryPage;
+}

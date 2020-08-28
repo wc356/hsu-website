@@ -1,3 +1,5 @@
+// read_time: 265 WPM for avg adult
+
 export const AUTHOR_ABOUT = {
   name: "Serena Hsu",
   location: "New York, NY",
@@ -6,6 +8,7 @@ export const AUTHOR_ABOUT = {
 
 // HOME PAGE
 export const HOME_PAGE = {
+  page_title: "Home | Serena Hsu 🎻",
   pic: {
     src: "/images/01_home/landing/IMG_0001.jpg",
     alt: "picuture-with-viola",
@@ -34,53 +37,16 @@ export const HOME_PAGE = {
   },
   contact: {
     title: "Have any questions?",
-    contact_btn: {
+    button: {
       email: "serenahsu.viola@gmail.com",
       text: "Let's Talk!",
     },
   },
 };
 
-export const HOME_LANDING_PIC = {
-  src: "/images/01_home/landing/IMG_0001.jpg",
-  alt: "picuture-with-viola",
-};
-
-export const HOME_LANDING_TEXT = {
-  title: "Welcome to My Site",
-  body:
-    "I’m a Violist/Violinist based in NYC with a personal teaching studio and a passion for chamber music collaboration and academia. Feel free to browse through my performances, writing, and projects to learn more.",
-};
-
-export const HOME_ABOUT_DESCR =
-  "Violist __Serena Hsu__ is currently pursuing a master’s degree at __The Juilliard School.__ She has studied at __The Cleveland Institute of Music, the Paris Conservatoire, and the International Musicians Seminar in Prussia Cove, England.__ Her main mentors include Hsin-Yun Huang, Misha Amory, Jean Sulem, Lynne Ramsey, and Jeffrey Irvine. She is a prizewinner of various competitions, including—YoungArts, the Ohio Viola Society Competition, Saint Paul String Quartet Competition, and the OSTA Chamber Music Competition. In addition, she has competed at the __Fischoff National Chamber Music Competition, was a finalist at the American Viola Society Competition, and semi-finalist of the Cecil Aronowitz International Viola Competition in England.__ Serena is an avid chamber musician and dedicated pedagogue.";
-
-export const HOME_GALLERY_PICS = {
-  rootDir: "/images/01_home/gallery",
-  pics: [
-    { id: 1, picName: "IMG_0001.jpg" },
-    { id: 2, picName: "IMG_0002.jpg" },
-    { id: 3, picName: "IMG_0003.jpg" },
-    { id: 4, picName: "IMG_0004.jpg" },
-    { id: 5, picName: "IMG_0005.jpg" },
-    { id: 6, picName: "IMG_0006.jpg" },
-    { id: 7, picName: "IMG_0007.jpg" },
-    { id: 8, picName: "IMG_0008.jpg" },
-    { id: 9, picName: "IMG_0009.jpg" },
-    { id: 10, picName: "IMG_0010.jpg" },
-  ],
-};
-
-export const HOME_CONTACT = {
-  title: "Have any questions?",
-  contact_btn: {
-    email: "serenahsu.viola@gmail.com",
-    text: "Let's Talk!",
-  },
-};
-
 // ABOUT PAGE
 export const ABOUT_PAGE = {
+  page_title: "About | Serena Hsu 🎻",
   text: [
     "Violist Serena Hsu is currently pursuing a master’s degree at The Juilliard School. She has studied at The Cleveland Institute of Music, the Paris Conservatoire, and the International Musicians Seminar in Prussia Cove, England. Her main mentors include Hsin-Yun Huang, Misha Amory, Jean Sulem, Lynne Ramsey, and Jeffrey Irvine. She is a prizewinner of various competitions, including YoungArts, the Ohio Viola Society Competition, Saint Paul String Quartet Competition, and the OSTA Chamber Music Competition. Additionally, she has competed at the Fischoff National Chamber Music Competition, was a finalist at the American Viola Society Competition, and semi-finalist of the Cecil Aronowitz International Viola Competition in England.",
     "She has performed at venues both in the United States and abroad, including Severance Hall, the Kennedy Center, Wiener Konzerthaus, Château de Fontainebleau, Alice Tully Hall, Southern Theatre, among others. She has appeared on Cleveland’s WRUW, North Carolina’s WDAV, and NPR’s “From the Top.” She has performed in master classes for Roberto Díaz, Barbara Westphal, Bruno Pasquier, François Salque, Quatuor Ébène, Lars Anders Tomter, among others.",
@@ -94,6 +60,7 @@ export const ABOUT_PAGE = {
 
 // MEDIA PAGE
 export const MEDIA_PAGE = {
+  page_title: "Media | Serena Hsu 🎻",
   title: "Media",
   videos: [
     {
@@ -145,67 +112,9 @@ export const MEDIA_PAGE = {
   ],
 };
 
-// read_time: 265 WPM for avg adult
-
-// type: "opinion" || "essay" || "article"
-export const ACADEMIA_POSTS = [
-  {
-    type: "opinion",
-    id: "remarkable-journey-eflat-approaching-brahms",
-    title:
-      "The Remarkable Journey of E-flat: Approaching Brahms’ Op. 120 No. 2 Viola Sonata in Eb Major",
-    desc:
-      "A look inside Brahms’ Eb sonata through a harmonic and thematic lens.",
-    src: "/images/05_by-serena/academia/The_Remarkable_Journey_of_E.pdf",
-  },
-  {
-    type: "essay",
-    id: "beethoven-op131-visual-media",
-    title: "Beethoven Op. 131 in Visual Media",
-    desc:
-      "The role of Beethoven’s Op. 131 String Quartet in the film A Late Quartet.",
-    src: "/images/05_by-serena/academia/Beethoven_Op_131.pdf",
-  },
-  {
-    type: "essay",
-    id: "motic-development-fourth-movement-debussy-op10-no1-str-quartet",
-    title:
-      "Motic Development in the fourth movement of Debussy's Op. 10 No. 1 String Quartet",
-    desc:
-      "An exploration of motivic development in the finale of Debussy’s one and only string quartet.",
-    src:
-      "/images/05_by-serena/academia/Motivic_Development_in_the_fourth_movement_of_Debussy.pdf",
-  },
-  {
-    type: "opinion",
-    id: "structure-beethoven-op111-piano-sonata",
-    title: "Structure in Beethoven's Op. 111 Piano Sonata",
-    desc: "A closer look at Beethoven's final Piano Sonata.",
-    src:
-      "/images/05_by-serena/academia/Structure_in_Beethoven's_Op._111_Piano_Sonata.pdf",
-  },
-];
-
-export const FOOTER = {
-  social: [
-    {
-      social_media: "Instagram",
-      href: "//instagram.com/serenahsu.classical/",
-      src: "/images/00_template/glyph-logo_May2016.png",
-      alt: "instagram-logo",
-    },
-    {
-      social_media: "YouTube",
-      href: "//youtube.com/channel/UCjkbIVl8RwdgfGxEmZ6qLtA",
-      src: "/images/00_template/yt_icon_mono_light.png",
-      alt: "youtube-logo",
-    },
-  ],
-  text: "Copyright © 2020 Serena Hsu.",
-};
-
-export const STUDIO = {
-  page_title: "𝄞tudio de 𝄡elle sonore",
+export const STUDIO_PAGE = {
+  page_title: "Studio | Serena Hsu 🎻",
+  main_title: "𝄞tudio de 𝄡elle sonore",
   sub_title: "Music Studio for Violin and Viola",
   body_title: "My Teaching Philosophy",
   body: [
@@ -228,7 +137,54 @@ export const STUDIO = {
   },
 };
 
-export const PROJECTS = {
+export const BY_SERENA_PAGE = {
+  page_title: "By Serena | Serena Hsu 🎻",
+};
+
+// type: "opinion" || "essay" || "article"
+export const ACADEMIA_PAGE = {
+  page_title: "Academia | Serena Hsu 🎻",
+  posts: [
+    {
+      type: "opinion",
+      id: "remarkable-journey-eflat-approaching-brahms",
+      title:
+        "The Remarkable Journey of E-flat: Approaching Brahms’ Op. 120 No. 2 Viola Sonata in Eb Major",
+      desc:
+        "A look inside Brahms’ Eb sonata through a harmonic and thematic lens.",
+      src: "/images/05_by-serena/academia/The_Remarkable_Journey_of_E.pdf",
+    },
+    {
+      type: "essay",
+      id: "beethoven-op131-visual-media",
+      title: "Beethoven Op. 131 in Visual Media",
+      desc:
+        "The role of Beethoven’s Op. 131 String Quartet in the film A Late Quartet.",
+      src: "/images/05_by-serena/academia/Beethoven_Op_131.pdf",
+    },
+    {
+      type: "essay",
+      id: "motic-development-fourth-movement-debussy-op10-no1-str-quartet",
+      title:
+        "Motic Development in the fourth movement of Debussy's Op. 10 No. 1 String Quartet",
+      desc:
+        "An exploration of motivic development in the finale of Debussy’s one and only string quartet.",
+      src:
+        "/images/05_by-serena/academia/Motivic_Development_in_the_fourth_movement_of_Debussy.pdf",
+    },
+    {
+      type: "opinion",
+      id: "structure-beethoven-op111-piano-sonata",
+      title: "Structure in Beethoven's Op. 111 Piano Sonata",
+      desc: "A closer look at Beethoven's final Piano Sonata.",
+      src:
+        "/images/05_by-serena/academia/Structure_in_Beethoven's_Op._111_Piano_Sonata.pdf",
+    },
+  ],
+};
+
+export const PROJECTS_PAGE = {
+  page_title: "Projects | Serena Hsu 🎻",
   HIDDEN_GEMS: {
     title: "Hidden Gems 💎",
     sub_title: "Serena Hsu & Melivia Citravani Raharjo",
@@ -255,4 +211,30 @@ export const PROJECTS = {
     },
   },
   ETUDE_STUDIES: {},
+};
+
+export const BLOG_PAGE = {
+  page_title: "Blog | Serena Hsu 🎻",
+};
+
+export const GALLERY_PAGE = {
+  page_title: "Gallery | Serena Hsu 🎻",
+};
+
+export const FOOTER = {
+  social: [
+    {
+      social_media: "Instagram",
+      href: "//instagram.com/serenahsu.classical/",
+      src: "/images/00_template/glyph-logo_May2016.png",
+      alt: "instagram-logo",
+    },
+    {
+      social_media: "YouTube",
+      href: "//youtube.com/channel/UCjkbIVl8RwdgfGxEmZ6qLtA",
+      src: "/images/00_template/yt_icon_mono_light.png",
+      alt: "youtube-logo",
+    },
+  ],
+  text: "Copyright © 2020 Serena Hsu.",
 };
