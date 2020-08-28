@@ -9,7 +9,7 @@ const BySerena = () => {
   function renderNavSection({ path, num, title }) {
     return (
       <Link href={path}>
-        <section className="flex-item">
+        <a className="flex-item">
           <div className="marker">
             <h1>{num}</h1>
             <p>{title}</p>
@@ -23,23 +23,6 @@ const BySerena = () => {
               width: 100%;
               cursor: pointer;
               transition: all 0.25s;
-            }
-            .flex-item .marker {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              height: 50%;
-            }
-            .marker h1 {
-              font-family: Lora;
-              margin-top: 3rem;
-              font-size: 4.5rem;
-              font-weight: 300;
-              color: ${colors.gray.xxd};
-              transition: 0.25s;
-            }
-            .marker p {
-              font-size: 2.5rem;
             }
             .flex-item:hover {
               color: pink;
@@ -60,6 +43,23 @@ const BySerena = () => {
             .flex-item:hover::after {
               width: 15%;
             }
+            .marker {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 50%;
+            }
+            .marker h1 {
+              font-family: Lora;
+              margin-top: 3rem;
+              font-size: 4.5rem;
+              font-weight: 300;
+              color: ${colors.gray.xxd};
+              transition: 0.25s;
+            }
+            .marker p {
+              font-size: 2.5rem;
+            }
             @media only screen and (max-width: 740px) {
               .flex-item {
                 align-items: stretch;
@@ -73,7 +73,7 @@ const BySerena = () => {
               }
             }
           `}</style>
-        </section>
+        </a>
       </Link>
     );
   }

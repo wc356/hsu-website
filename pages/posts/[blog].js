@@ -1,25 +1,15 @@
 import React from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import Markdown from "react-markdown";
 
-import Layout from "../../00_template/Layout";
-import BackBtn from "../../00_template/BackBtn";
+import Layout from "../../src/components/00_template/Layout";
+import BackBtn from "../../src/components/00_template/BackBtn";
 
-import { BLOG_POSTS, AUTHOR_ABOUT } from "../../../database/index";
+import { AUTHOR_ABOUT } from "../../src/database/index";
 
-import colors from "../../../../styles/theme";
-import styles from "./Blog.module.scss";
+import colors from "../../styles/theme";
+import styles from "../../styles/blog/Blog.module.scss";
+import { getAllPostIds, getPostData } from "../../src/lib/posts";
 
-const Blog = () => {
-  const router = useRouter();
-  const title = router.query.blog;
-
-  console.log(router);
-  console.log(title);
-
-  const post = BLOG_POSTS.find((post) => post.title === title);
-
+export default function Blog({ postData }) {
   function renderImg(pic) {
     const PIC_PATH = `/images/05_by-serena/blog/${pic}`;
     return (
@@ -170,26 +160,17 @@ const Blog = () => {
     );
   }
 
-  function renderBody(textArray) {
+  function renderBody(contentHtml) {
     return (
-      <section className="content">
-        {textArray.map((text, i) => (
-          <article key={i}>
-            <Markdown className={styles.markdown} source={text} />
-          </article>
-        ))}
+      <section>
+        <div className={styles.markdown} dangerouslySetInnerHTML={{ __html: contentHtml }} />
         <div className="btn-container">
           <BackBtn href="/by-serena__blog" />
         </div>
         <style jsx>
           {`
-            .content {
+            section {
               padding: 1rem 0;
-            }
-            article {
-              padding: 1rem 0;
-              line-height: 1.75;
-              color: ${colors.black.l};
             }
             .btn-container {
               margin-top: 1.5rem;
@@ -323,14 +304,14 @@ const Blog = () => {
 
   return (
     <Layout>
-      {renderImg(post.pic)}
+      {renderImg(postData.pic)}
       <div className="header-container">
-        {renderTitle(post.title)}
+        {renderTitle(postData.title)}
         <section className="header-items">
-          {renderReadTime(post.read_time)}
-          {renderAuthorSocial(post.date)}
-          {renderBody(post.body)}
-          {renderBlogFooter(post.tags)}
+          {renderReadTime(postData["read-time"])}
+          {renderAuthorSocial(postData.date)}
+          {renderBody(postData.contentHtml)}
+          {renderBlogFooter(postData.tags)}
           {renderBlogFooterNav(AUTHOR_ABOUT)}
         </section>
       </div>
@@ -357,6 +338,21 @@ const Blog = () => {
       </style>
     </Layout>
   );
-};
+}
 
-export default Blog;
+export async function getStaticPaths() {
+  const paths = getAllPostIds();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const postData = await getPostData(params.blog);
+  return {
+    props: {
+      postData,
+    },
+  };
+}
