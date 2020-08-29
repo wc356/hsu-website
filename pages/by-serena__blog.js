@@ -169,6 +169,11 @@ export default function BySerenaBlog({ allPostsData }) {
             box-shadow: 3px 3px 10px ${colors.pink.m};
             color: ${colors.blue.main};
           }
+          @media only screen and (max-width: 1400px) {
+            a {
+              height: auto;
+            }
+          }
           @media only screen and (max-width: 900px) {
             .blog-landing-container {
               flex-direction: column;

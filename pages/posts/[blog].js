@@ -8,6 +8,15 @@ import colors from "../../styles/theme";
 import styles from "../../styles/blog/Blog.module.scss";
 
 export default function Blog({ postData }) {
+  function renderHeadTitle(title) {
+    return (
+      <Head>
+        <title>{`${title} | Serena Hsu 🎻`}</title>
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js" />
+      </Head>
+    );
+  }
+
   function renderImg(pic) {
     const PIC_PATH = `/images/05_by-serena/blog/${pic}`;
     return (
@@ -68,7 +77,7 @@ export default function Blog({ postData }) {
   function renderReadTime(readTime) {
     return (
       <p>
-        <i>
+        <i id="icon">
           <ion-icon name="alarm-outline" />
         </i>{" "}
         <span>{`${readTime} Minute read`}</span>
@@ -90,31 +99,43 @@ export default function Blog({ postData }) {
   }
 
   function renderAuthorSocial(date) {
-    const renderShareLinks = () => (
-      <p>
-        <span>share</span> F | P | T
-        <style jsx>
-          {`
-            span {
-              font-weight: 400;
-              font-style: italic;
-            }
-          `}
-        </style>
-      </p>
-    );
+    function renderProfilePic() {
+      return (
+        <div className="profile__pic">
+          <img src="/images/IMG_0878.jpg" alt="#" />
+          <style jsx>
+            {`
+              .profile__pic {
+                width: 50px;
+                height: 50px;
+                overflow: hidden;
+                border-radius: 50%;
+              }
+              .profile__pic img {
+                width: 250%;
+                transform: translateX(-48%) translateY(-5%);
+              }
+            `}
+          </style>
+        </div>
+      );
+    }
+
+    function renderNameDate() {
+      return <p>Serena Hsu</p>;
+    }
+
+    function renderDate(date) {
+      return <p>{date}</p>;
+    }
 
     return (
       <div className="profile-container">
         <div className="profile">
-          <div className="profile__pic">
-            <img src="/images/IMG_0878.jpg" alt="#" />
-          </div>
+          {renderProfilePic()}
           <div className="profile__text-date">
-            <p>
-              <span>Serena Hsu</span> {` | ${date}`}
-            </p>
-            {renderShareLinks()}
+            {renderNameDate()}
+            {renderDate(date)}
           </div>
         </div>
         <style jsx>
@@ -123,21 +144,12 @@ export default function Blog({ postData }) {
               display: flex;
               text-align: left;
               justify-item: space-between;
+              margin: 1rem 0;
             }
             .profile {
               display: flex;
               align-items: center;
               width: 100%;
-            }
-            .profile__pic {
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-              overflow: hidden;
-            }
-            .profile__pic img {
-              width: 250%;
-              transform: translateX(-48%) translateY(-5%);
             }
             .profile__text-date {
               display: flex;
@@ -147,10 +159,6 @@ export default function Blog({ postData }) {
               font-family: Montserrat;
               text-align: center;
               color: ${colors.gray.xxd};
-            }
-            .profile__text-date span {
-              vertical-align: baseline;
-              font-weight: 600;
             }
           `}
         </style>
@@ -305,9 +313,7 @@ export default function Blog({ postData }) {
 
   return (
     <Layout>
-      <Head>
-        <title>{`${postData.title} | Serena Hsu 🎻`}</title>
-      </Head>
+      {renderHeadTitle(postData.title)}
       {renderImg(postData.pic)}
       <div className="header-container">
         {renderTitle(postData.title)}
