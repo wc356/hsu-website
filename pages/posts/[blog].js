@@ -191,31 +191,35 @@ export default function Blog({ postData }) {
   }
 
   function renderBlogFooter(tags) {
-    const renderTags = (tags) => (
-      <>
-        <h1>Tags:</h1>
-        <p>{tags.map((tag) => `#${tag} `)}</p>
-        <style jsx>
-          {`
-            h1 {
-              padding-bottom: 1rem;
-            }
-            p {
-              color: ${colors.gray.xxd};
-            }
-          `}
-        </style>
-      </>
-    );
+    function renderTags(tags) {
+      return (
+        <>
+          <h1>Tags:</h1>
+          <p>{tags.map((tag) => `#${tag} `)}</p>
+          <style jsx>
+            {`
+              h1 {
+                padding-bottom: 1rem;
+              }
+              p {
+                color: ${colors.gray.xxd};
+              }
+            `}
+          </style>
+        </>
+      );
+    }
 
-    const renderLink = (href, text) => <a href={href}>{text}</a>;
+    function renderLink(href, text) {
+      return <a href={href}>{text}</a>;
+    }
 
     return (
       <section className="footer">
         <hr />
         <div className="flex-container">
           <div className="flex-left">{renderTags(tags)}</div>
-          <div className="flex-right">{renderLink("#", "SHARE")}</div>
+          <div className="flex-right" />
         </div>
         <hr />
         <style jsx>
