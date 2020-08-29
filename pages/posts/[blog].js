@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Head from "next/head";
 import Layout from "../../src/components/00_template/Layout";
 import BackBtn from "../../src/components/00_template/BackBtn";
@@ -193,7 +193,7 @@ export default function Blog({ postData }) {
   function renderBlogFooter(tags) {
     function renderTags(tags) {
       return (
-        <>
+        <Fragment>
           <h1>Tags:</h1>
           <p>{tags.map((tag) => `#${tag} `)}</p>
           <style jsx>
@@ -206,12 +206,8 @@ export default function Blog({ postData }) {
               }
             `}
           </style>
-        </>
+        </Fragment>
       );
-    }
-
-    function renderLink(href, text) {
-      return <a href={href}>{text}</a>;
     }
 
     return (
@@ -343,7 +339,7 @@ export default function Blog({ postData }) {
             margin-top: 3rem;
             vertical-align: middle;
           }
-          @media only screen and (max-width: 400px) {
+          @media only screen and (max-width: 1000px) {
             .header-container {
               padding: 4.5rem 1rem;
             }
