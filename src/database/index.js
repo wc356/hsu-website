@@ -152,7 +152,7 @@ export const ACADEMIA_PAGE = {
         "The Remarkable Journey of E-flat: Approaching Brahms’ Op. 120 No. 2 Viola Sonata in Eb Major",
       desc:
         "A look inside Brahms’ Eb sonata through a harmonic and thematic lens.",
-      src: "/images/05_by-serena/academia/The_Remarkable_Journey_of_E.pdf",
+      src: "/images/05_by-serena/academia/The Remarkable Journey of E-flat.pdf",
     },
     {
       type: "essay",
@@ -160,17 +160,16 @@ export const ACADEMIA_PAGE = {
       title: "Beethoven Op. 131 in Visual Media",
       desc:
         "The role of Beethoven’s Op. 131 String Quartet in the film A Late Quartet.",
-      src: "/images/05_by-serena/academia/Beethoven_Op_131.pdf",
+      src: "/images/05_by-serena/academia/Beethoven Op. 131 in Media (1).pdf",
     },
     {
       type: "essay",
       id: "motic-development-fourth-movement-debussy-op10-no1-str-quartet",
-      title:
-        "Motic Development in the fourth movement of Debussy's Op. 10 No. 1 String Quartet",
+      title: "Motivic Development in the fourth movement of Debussy (1).pdf",
       desc:
         "An exploration of motivic development in the finale of Debussy’s one and only string quartet.",
       src:
-        "/images/05_by-serena/academia/Motivic_Development_in_the_fourth_movement_of_Debussy.pdf",
+        "/images/05_by-serena/academia/Motivic Development in the fourth movement of Debussy (1).pdf",
     },
     {
       type: "opinion",
@@ -178,7 +177,15 @@ export const ACADEMIA_PAGE = {
       title: "Structure in Beethoven's Op. 111 Piano Sonata",
       desc: "A closer look at Beethoven's final Piano Sonata.",
       src:
-        "/images/05_by-serena/academia/Structure_in_Beethoven's_Op._111_Piano_Sonata.pdf",
+        "/images/05_by-serena/academia/Structure in Beethoven's Op. 111 Piano Sonata (2).pdf",
+    },
+    {
+      type: "opinion",
+      id: "evolution-of-harmony",
+      title: "The Evolution of Harmony",
+      desc:
+        "Investigating the development of harmony from ancient times to the present",
+      src: "/images/05_by-serena/academia/The  Evolution of Harmony.pdf",
     },
   ],
 };
@@ -200,7 +207,6 @@ export const PROJECTS_PAGE = {
     ],
     behind_scenes: {
       title: "🎥 BEHIND THE SCENES 🎥",
-
       body: [
         "There will never be a time in which one won’t hear the opening of the Bartok Concerto, Brahms F minor sonata, the dreaded opening octave of Der Schwanendreher, the dreaded 16th passage from the Walton Concerto movement 1, and more, in practice rooms as you walk down the hallway for the 5th time because of course, there aren’t any rooms available; or on the streets from an open window in an apartment as you walk home. Everyone seems to be learning the same repertoire--and yes, there is only so much standard viola repertoire, but why not explore more!",
         "I came across a few of these pieces around 2 years ago from Tabea Zimmermann’s album and did implement a few of them in my yearly recitals but always wanted more. Given the current situation, I decided to indulge in these hidden gems. The first prototype of my “gems” project was so difficult. I first tried to plan out what concepts would be important in virtually collaborating--which in it’s own sense consists of different elements. Since live virtual collaboration is difficult with modern technology, not to mention varying internet connections and quality of equipment. Much of video conferencing microphones are geared towards speech and enunciation, but do not fare well for instrumentalists with the same resources. With this in mind, recording live was not an option.",
