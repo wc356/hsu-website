@@ -185,7 +185,7 @@ export const ACADEMIA_PAGE = {
       title: "The Evolution of Harmony",
       desc:
         "Investigating the development of harmony from ancient times to the present",
-      src: "/images/05_by-serena/academia/The  Evolution of Harmony.pdf",
+      src: "/images/05_by-serena/academia/The Evolution of Harmony.pdf",
     },
   ],
 };
