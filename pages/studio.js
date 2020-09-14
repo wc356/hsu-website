@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import Head from "next/head";
 import Markdown from "react-markdown";
 import Layout from "../src/components/00_template/Layout";
-import ContactBtn from "../src/components/00_template/ContactBtn";
+// import ContactBtn from "../src/components/00_template/ContactBtn";
 import { STUDIO_PAGE } from "../src/database/index";
 import styles from "../src/components/04_studio/studio.module.scss";
 
-const StudioPage = () => {
+export default function StudioPage() {
   function renderPageTitle({ title, subTitle }) {
     return (
       <div className="title-container">
@@ -116,6 +116,33 @@ const StudioPage = () => {
     return <Markdown className={styles.markdown} source={text} />;
   }
 
+  function renderFormLink({ link, text }) {
+    return (
+      <a href={link} target="_blank" rel="nofollow noopener noreferrer">
+        {text}
+        <style jsx>
+          {`
+            a {
+              display: flex;
+              justify-content: center;
+              background: pink;
+              padding: 1rem;
+              font-family: Montserrat;
+              color: #000;
+              font-weight: 500;
+              letter-spacing: 1px;
+              border-radius: 1.5rem;
+              transition: all 0.15s;
+            }
+            a:hover {
+              background: aquamarine;
+            }
+          `}
+        </style>
+      </a>
+    );
+  }
+
   return (
     <Layout>
       <Head>
@@ -131,10 +158,7 @@ const StudioPage = () => {
           {renderBodyTitle(STUDIO_PAGE.body_title)}
           {renderBodyContent(STUDIO_PAGE.body)}
           {renderSlogan(STUDIO_PAGE.slogan)}
-          <ContactBtn
-            email={STUDIO_PAGE.contact_btn.email}
-            text={STUDIO_PAGE.contact_btn.text}
-          />
+          {renderFormLink(STUDIO_PAGE.form)}
         </div>
         <style jsx>
           {`
@@ -163,6 +187,4 @@ const StudioPage = () => {
       </div>
     </Layout>
   );
-};
-
-export default StudioPage;
+}

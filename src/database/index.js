@@ -131,8 +131,13 @@ export const STUDIO_PAGE = {
   },
   slogan:
     "** ** All lessons will be ONLINE for the 2020/21 Academic school year ** **",
-  contact_btn: {
-    email: "serenahsu.studio@gmail.com",
+  // contact_btn: {
+  //   email: "serenahsu.studio@gmail.com",
+  //   text: "Contact Me!",
+  // },
+  form: {
+    link:
+      "//docs.google.com/forms/d/e/1FAIpQLSfo_SAVBY7Kr8ScIlOGMwVE3Gg1APjHgnfn19votEmp41yHoQ/viewform?usp=sf_link",
     text: "Contact Me!",
   },
 };
